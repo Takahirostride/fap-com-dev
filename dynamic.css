@@ -1,0 +1,117 @@
+/* BEGIN dynamic_css_field */
+#home {
+  background-color: ;
+  background-image: url("");
+  background-repeat: ;
+}
+#home .bg-overlay {
+    background-color: #32425a;
+    opacity: 0.7;
+}
+
+footer.footer {
+  background-color: ;
+  background-image: url("");
+  background-repeat: ;
+}
+
+footer.footer .bg-overlay {
+    background-color: #32425a;
+    opacity: 0.7;
+}
+
+footer.footer {
+  background-color: ;
+  background-image: url("");
+  background-repeat: ;
+}
+
+body {  }
+h1 {  }
+h2 {  }
+h3 {  }
+h4 {  }
+h5 {  }
+h5 {  }
+.welcome-section .welcome-content h1 {  }
+.welcome-section .welcome-content p {  }
+.section-description {  }
+.btn-default {
+    background-color: #32425A;
+    border-color: #32425A;
+}
+.og-details .btn,
+.pricing-button .btn, {
+    color: #32425A;
+    border-color: #32425A;
+}
+.social-icons.dark-icons a:hover,
+.btn-default {
+    border-color: #32425A;
+}
+.portfolio-item > a .overlay-content h4,
+.og-details h3,
+.social-icons.dark-icons a,
+.comments i.fa{
+    color: #32425A;
+}
+.portfolio-item > a {
+    box-shadow: inset 0px 0px 0px 3px #32425A;
+}
+.portfolio-item > a .overlay-content h4::after,
+.og-details .btn:hover,
+.pricing-button .btn:hover,
+.recent-posts .post-col:before,
+.contact-form .form-control:focus,
+.contact-form input[type="submit"]:focus,
+.contact-form input[type="submit"]:hover,
+.comment-form .form-group input:focus,
+.comment-form .form-group textarea:focus,
+.comment-form input[type="submit"]:hover,
+.iconbox .iconbox-icon {
+    background-color: #32425A;
+}
+.navbar-nav li ul:before {
+  background: #32425A;
+}
+.navbar-nav li ul:after {
+  border-bottom-color: #32425A;
+}
+.btn-default.btn-outline {
+    background-color: transparent;
+    color: #32425A;
+    border-color: #32425A;
+}
+.btn-default.btn-outline:hover {
+    background-color: #32425A;
+    border-color: #32425A;
+}
+.og-expander {
+    background-color: #F6ECDA;
+}
+a,
+.reveal-inner-menu:hover,
+.reveal-inner-menu:hover span {color: #D9A13F;}
+a:hover {color: #b98429;}
+.rotating-words {color:#D9A13F;}
+.scroll-more {color:#D9A13F;}
+.team-member span {color: #D9A13F;}
+.team-member .profile-picture .profile-overlay { background-color: #D9A13F;}
+.recent-posts .read-more {color:#D9A13F; border-color:#D9A13F}
+.recent-posts .read-more:hover {color:#32425A; border-color:#32425A}
+.contact-form .form-control,
+.comment-form .form-group input,
+.comment-form .form-group textarea{border-color:#32425A;}
+.navbar-nav li a:hover, .navbar-nav li a:focus {color:#D9A13F;}
+.navbar-nav li a:after, .navbar-nav .active a, .navbar-nav .active a:hover {color:#D9A13F;}
+::selection {color:#fff;background:;}
+::-moz-selection {color:#fff;background:;}
+.comments li {border-left-color:#32425A;}
+.pricing-button .btn {
+    color: #32425A;
+    border-color: #32425A;
+}
+.spinner1, .spinner1::before, .spinner1::after {border-color:;}
+.spinner2 .double-bounce1, .spinner2 .double-bounce2, .spinner3, .spinner4 > div {background-color:;}
+.preloader {background-color:#FFFFFF;}
+/* END dynamic_css_field */

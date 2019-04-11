@@ -1,0 +1,42 @@
+<wpml-config>
+  <custom-fields>
+    <custom-field action="ignore">activate_lightbox</custom-field>
+    <custom-field action="ignore">activate_lightbox_blog_post</custom-field>
+    <custom-field action="ignore">activate_page_overlay</custom-field>
+    <custom-field action="ignore">activate_page_parallax</custom-field>
+    <custom-field action="ignore">activate_special_heading</custom-field>
+    <custom-field action="ignore">activate_special_heading_post</custom-field>
+    <custom-field action="ignore">activate_title_background</custom-field>
+    <custom-field action="ignore">activate_title_overlay</custom-field>
+    <custom-field action="ignore">blog_post_slides</custom-field>
+    <custom-field action="ignore">builder_sections</custom-field>
+    <custom-field action="ignore">custom_page_background</custom-field>
+    <custom-field action="ignore">deactivate_builder</custom-field>
+    <custom-field action="ignore">page_content_color</custom-field>
+    <custom-field action="ignore">page_content_width</custom-field>
+    <custom-field action="ignore">page_overlay</custom-field>
+    <custom-field action="ignore">page_overlay_color</custom-field>
+    <custom-field action="ignore">page_overlay_opacity</custom-field>
+    <custom-field action="ignore">page_overlay_transparency</custom-field>
+    <custom-field action="ignore">page_padding</custom-field>
+    <custom-field action="ignore">pblog_post_images</custom-field>
+    <custom-field action="ignore">portfolio_images</custom-field>
+    <custom-field action="ignore">portfolio_video</custom-field>
+    <custom-field action="ignore">show_page_title</custom-field>
+    <custom-field action="ignore">show_video</custom-field>
+    <custom-field action="ignore">title_background_color</custom-field>
+    <custom-field action="ignore">title_color_post</custom-field>
+    <custom-field action="translate">custom_page_title</custom-field>
+    <custom-field action="translate">tagline_post</custom-field>
+    <custom-field action="translate">page_tagline</custom-field>
+  </custom-fields>
+  <custom-types>
+    <custom-type translate="1">portfolio</custom-type>
+    <custom-type translate="1">testimonial</custom-type>
+    <custom-type translate="1">wpcf7_contact_form</custom-type>
+  </custom-types>
+  <taxonomies>
+    <taxonomy translate="1">portfoliocats</taxonomy>
+    <taxonomy translate="1">testimonials</taxonomy>
+  </taxonomies>
+</wpml-config>
