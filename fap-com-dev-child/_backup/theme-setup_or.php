@@ -100,7 +100,7 @@ function crafto_scripts_styles() {
 	wp_localize_script( 'scripts', 'theme_path', $theme_array );
 
 	// Loads CSS files.
-	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', false, '3.3.1');
+	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.css', false, '3.3.1');
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), null, false);
 	wp_enqueue_style('lightbox', get_stylesheet_directory_uri() . '/css/prettyPhoto.css', false, '1.0');
 	wp_enqueue_style('animate', get_stylesheet_directory_uri() . '/css/animate.css', false, '1.0');
