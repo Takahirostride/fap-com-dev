@@ -16,7 +16,7 @@
 <!-- Footer -->
 <!--<footer class="footer<?php echo $parallax; ?> photo-section dark-section <?php echo $content_class; ?>">-->
 <footer class="main_footer">
-	<div class="main_footer_cont">
+	<div class="">
     	<div class="main_footer_content clearfix">
             <div class="main_footer_cont_wrap main_footer_cont_wrap1">
                 <ul class="main_footer_ul">
@@ -50,18 +50,20 @@
                 <div class="clear"></div>
             </div><!-- .main_footer_column02 -->
         </div>
-        
+
     </div><!-- .main_footer_cont -->
 
     <div class="main_footer_cont_under">
         <div class="container">
-            <div class="main_footer_cont_under_left">
-                <div class="main_footer_cont_under_left_name">株式会社FAプロダクツ</div>
-                <div class="main_footer_cont_under_left_txt">〒105-0004 東京都港区新橋5丁目35番10号 新橋アネックス2階</div>
-                <div class="main_footer_cont_under_left_txt">TEL:03-6453-6761  /  FAX:03-6453-6762</div>
-            </div>
-            <div class="main_footer_cont_under_right">
-                <p class="copy">Copyright &copy; <?php echo date("Y"); ?> FA Products All rights reserved.</p>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="main_footer_cont_under_left_name">株式会社FAプロダクツ</div>
+                    <div class="main_footer_cont_under_left_txt">〒105-0004 東京都港区新橋5丁目35番10号 新橋アネックス2階</div>
+                    <div class="main_footer_cont_under_left_txt">TEL:03-6453-6761  /  FAX:03-6453-6762</div>
+                </div>
+                <div class="col-md-4">
+                    <p class="copy">Copyright &copy; <?php echo date("Y"); ?> FA Products All rights reserved.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -76,6 +78,6 @@
 <!-- Javascript files -->
 <!-- Placed at the end of the document so the pages load faster -->
 <?php wp_footer(); ?>
-	
+
 </body>
 </html>

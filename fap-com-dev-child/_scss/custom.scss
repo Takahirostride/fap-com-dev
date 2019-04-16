@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+/*mixin*/
+
+@import "_mixin";
+
+@mixin entry-frame{
+    max-width: 100%;
+    height: auto;
+    border: 8px solid #333;
+}
+
+/*fixed*/
+.navbar-fap.fixed{
+    position: fixed;
+    background: #ffffff;
+    z-index: 1000;
+    top: 0;
+}
+
+/*common layout*/
+/*body {
+font-size: 100%;
+} */
+p.example1 { font-size: large; }
+
+p.example2 {
+background-color: #000080
+}
+
+/*background set*/
+.trsp_black {
+    background: rgba(0,0,0,.5);
+    background-blend-mode: color;
+}
+
+.mission_bg {
+    background:
+    linear-gradient(to right,rgba(0,0,0,.9) 30%, rgba(255,255,0,.5) 90%), 
+    url(../images/bg_mission_2019a.jpg)center no-repeat;
+    background-size: cover;
+    background-blend-mode: color;
+}
+
+.news_bg {
+    background:
+    linear-gradient(rgba(255,255,255,.1) 0%, rgba(255,255,255,1) 90%), 
+    url(../images/bg_solarpanel.jpg)center bottom no-repeat;
+    background-size: cover;
+    background-blend-mode: screen;
+}
+
+.com_bg {
+    @include mq(xsmall){
+    background:
+    linear-gradient(rgba(000,255,255,.1) 0%, rgba(000,255,255,.5) 90%), 
+    linear-gradient(to bottom, rgba(0,0,0,.8) 60%, rgba(000,255,255,.25) 90%), 
+    url(../images/bg_aircraft.jpg)right bottom no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    }
+    @include mq(medium){
+    background:
+    linear-gradient(rgba(000,255,255,.1) 0%, rgba(000,255,255,.5) 90%), 
+    linear-gradient(to right, rgba(0,0,0,.8) 60%, rgba(000,255,255,.25) 90%), 
+    url(../images/bg_aircraft.jpg)center bottom no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    }
+
+}
+
+/*btn set*/
+.btn-fa-brast {
+    position: relative;
+    display: inline-block;
+    width: 10em;
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    background: transparent;
+    border-bottom: solid 3px #668ad8;
+    border-left: solid 3px #668ad8;
+    color: #fff;
+    transition: .4s;
+    &:hover{
+        padding-left: 0.7em;
+        padding-right: 0.3em;   
+    }
+}
+
+/*contents*/
+.fap-enterprise{
+    .cont_three_column_li-txtbox {
+        @include mq(xsmall){
+            position: absolute;
+        }
+        @include mq(medium){
+            position: relative;
+            min-height: 300px;
+        }
+        @include mq(xlarge){
+            position: absolute;
+            min-height: initial;
+        }
+        left:0px;
+        bottom:0px;
+        background-color: rgba(0,0,0,0.4);
+        color:#fff;
+        width:100%;
+        padding-left:20px;
+        min-height:140px;
+    }
+}
+
+.page-home-content{
+    .entry-content img {
+        @include entry-frame;
+    }
+}
+
+.home .entry-content h2, .entry-content h4{
+    padding: initial;
+}
+
+/*page contents*/
+.mpage_block {padding:50px 10px;}
+.mbox-page {max-width:none;margin:0 auto;text-align:center;}
+.mbox_left {display:inline-block;vertical-align:top;width:350px}
+.mbox_center {display:inline-block;vertical-align:top;width:350px;}
+.mbox_right {display:inline-block;vertical-align:top;width:350px;}
+.mofficers {text-align:left;}
+.mofficer_txt{font-size:12px;}
+.mofficers_img {float:left;margin-right:5px;margin-bottom:10px;}
+.mofficers dl dt {font-size:12px;color:#07a3fd;}
+.mofficers dl dd {font-size:18px;font-weight:bold;}
+.name_s {font-size:11px;padding-left:0px;font-weight:normal;}

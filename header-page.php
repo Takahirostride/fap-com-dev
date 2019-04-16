@@ -58,10 +58,10 @@
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
 	<![endif]-->
-    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600' rel='stylesheet' type='text/css'>
-    <!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">-->
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/slick.css;">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/slick-theme.css;">
 
 <!-- 追加js -->
 <script src="<?php bloginfo('template_url');?>/js/slick.js"></script>
@@ -166,17 +166,19 @@
     });
 </script>
 
-<style type="text/css">
-    /*task 分けるここ*/
-    /*body {
-    font-size: 100%;
-    } */
-    p.example1 { font-size: large; }
-
-    p.example2 {
-    background-color: #000080
+<script>
+    //ナビ不随
+    $(window).scroll(function(){
+    var element = $('#navbar-fap'),
+        scroll = $(window).scrollTop(),
+        height = element.outerHeight();
+    if ( scroll > height ) {
+        element.addClass('fixed');
+    } else {
+        element.removeClass('fixed');
     }
-</style>
+    });
+</script>
 
 </head>
 
@@ -238,9 +240,9 @@ if ( function_exists( 'ot_get_option' ) ):
 } ?>
 
 <!--<div class="navbar navbar-fixed-top<?php echo $menu_class; ?>">-->
-<div class="container-fluid d-none d-lg-block" style="height:90px;">
+<div class="container-fluid d-none d-lg-block">
     <div class="row">
-    <div class="col-lg-2 logo-wrap clearfix pt-lg-3">
+    <div class="col-lg-2 logo-wrap clearfix px-lg-5 py-lg-2">
 
         <?php if(is_page(home)) : ?>
             <a class="navbar-brand navbar-brand-title" href="<?php bloginfo('url'); ?>"><h1 class="logo">FA Products</h1></a>
@@ -263,7 +265,7 @@ if ( function_exists( 'ot_get_option' ) ):
 </div><!-- /.container -->
 
 
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav id="navbar-fap" class="navbar-fap navbar navbar-expand-lg navbar-light whitemenu mb-1">
 
     <div class="logo-wrap d-inline-block d-lg-none pl-2 pt-2">
 
@@ -286,9 +288,10 @@ if ( function_exists( 'ot_get_option' ) ):
         <li class="nav-bar-navi01-li nav-bar-navi01-li05"><a href="http://smartfactorylabo.com/" target="_blank"><i class="fa fa-play-circle" aria-hidden="true"></i>スマラボ</a></li>
         <li class="nav-bar-navi01-li nav-bar-navi01-li05"><a href="https://connected-engineering.com/" target="_blank"><i class="fa fa-play-circle" aria-hidden="true"></i>Team Cross FA</a></li>
         <li class="nav-bar-navi01-li nav-bar-navi01-li03"><a href="https://fa-products.jp/" ><i class="fa fa-play-circle" aria-hidden="true"></i>企業サイト</a></li>
-        <li class="nav-bar-navi01-li nav-bar-navi01-li04 hover-opa"><p class="example1"><strong>　Tel 03-6453-6761</strong></span></li>
+        <li class="nav-bar-navi01-li nav-bar-navi01-li04 hover-opa"><p class="example1"><strong>Tel 03-6453-6761</strong></span></li>
     </ul>
     <ul class="navbar-nav mx-auto mt-2 mt-lg-0 d-inline-block d-lg-flex">
+        <li class="nav-bar-navi02-li nav-bar-navi02-li00"><a href="<?php bloginfo('url'); ?>"><span class="nav-bar-navi02-li-txt-t">Top</span><span class="nav-bar-navi02-li-txt-u br"></span></a></li>
         <li class="nav-bar-navi02-li nav-bar-navi02-li01"><a href="<?php bloginfo('url'); ?>/about.html"><span class="nav-bar-navi02-li-txt-t">会社概要</span><span class="nav-bar-navi02-li-txt-u br">Corporate</span></a></li>
         <li class="nav-bar-navi02-li nav-bar-navi02-li02"><a href="<?php bloginfo('url'); ?>/vision.html"><span class="nav-bar-navi02-li-txt-t">ビジョン</span><span class="nav-bar-navi02-li-txt-u br">Vision</span></a></li>
         <li class="nav-bar-navi02-li nav-bar-navi02-li03"><a href="<?php bloginfo('url'); ?>/topics.html"><span class="nav-bar-navi02-li-txt-t">耳より情報</span><span class="nav-bar-navi02-li-txt-u br">Topics</span></a></li>
