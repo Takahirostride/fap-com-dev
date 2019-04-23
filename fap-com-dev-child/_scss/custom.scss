@@ -10,7 +10,50 @@
     border: 8px solid #333;
 }
 
-/*fixed*/
+/*navigation*/
+.navbar-nav li:hover ul{
+    @include mq(large){
+        display: block;
+        visibility: visible;
+        z-index: 1000;
+    }
+}
+.navbar-nav li ul{
+    @include mq(xsmall){
+        display: none;
+        visibility: hidden;
+        z-index: 1000;
+    }
+}
+.dark-menu .nav-bar-navi02-li:nth-child(8){
+    @include mq(xsmall){
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
+
+.navbar-collapse.collapse.show{
+    @include mq(xsmall){
+        position: absolute;
+        top: 73px;
+        background-color:aliceblue;
+        z-index: 1500;
+    }
+    @include mq(medium){
+        position: relative;
+        top: initial;
+        background-color:#fff;
+        z-index: initial;
+    }
+}
+
+.navbar-light .navbar-toggler{
+    color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.1);
+    width: 50px;
+}
+
+/*navigation fixed*/
 .navbar-fap.fixed{
     position: fixed;
     background: #ffffff;
@@ -53,17 +96,16 @@ background-color: #000080
 .com_bg {
     @include mq(xsmall){
     background:
-    linear-gradient(rgba(000,255,255,.1) 0%, rgba(000,255,255,.5) 90%), 
-    linear-gradient(to bottom, rgba(0,0,0,.8) 60%, rgba(000,255,255,.25) 90%), 
-    url(../images/bg_aircraft.jpg)right bottom no-repeat;
+        linear-gradient(to bottom, rgba(0,0,0,.5) 60%, rgba(0,255,255,0.25) 90%),
+        url(../images/bg_aircraft.jpg) right bottom no-repeat;
     background-size: cover;
-    background-blend-mode: overlay;
+    background-blend-mode: hard-light;
     }
     @include mq(medium){
     background:
-    linear-gradient(rgba(000,255,255,.1) 0%, rgba(000,255,255,.5) 90%), 
-    linear-gradient(to right, rgba(0,0,0,.8) 60%, rgba(000,255,255,.25) 90%), 
-    url(../images/bg_aircraft.jpg)center bottom no-repeat;
+        linear-gradient(rgba(000,255,255,.1) 0%, rgba(000,255,255,.5) 90%), 
+        linear-gradient(to right, rgba(0,0,0,.8) 60%, rgba(000,255,255,.25) 90%), 
+        url(../images/bg_aircraft.jpg)center bottom no-repeat;
     background-size: cover;
     background-blend-mode: overlay;
     }
@@ -85,7 +127,7 @@ background-color: #000080
     transition: .4s;
     &:hover{
         padding-left: 0.7em;
-        padding-right: 0.3em;   
+        padding-right: 0.3em;
     }
 }
 

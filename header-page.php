@@ -242,25 +242,26 @@ if ( function_exists( 'ot_get_option' ) ):
 <!--<div class="navbar navbar-fixed-top<?php echo $menu_class; ?>">-->
 <div class="container-fluid d-none d-lg-block">
     <div class="row">
-    <div class="col-lg-2 logo-wrap clearfix px-lg-5 py-lg-2">
+        <div class="col-lg-2 logo-wrap clearfix px-lg-5 py-lg-2">
 
-        <?php if(is_page(home)) : ?>
-            <a class="navbar-brand navbar-brand-title" href="<?php bloginfo('url'); ?>"><h1 class="logo">FA Products</h1></a>
-        <?php else: ?>
-            <a class="navbar-brand navbar-brand-title" href="<?php bloginfo('url'); ?>"><div class="logo">FA Products</div></a>
-        <?php endif; ?>
+            <?php if(is_page(home)) : ?>
+                <a class="navbar-brand navbar-brand-title" href="<?php bloginfo('url'); ?>"><h1 class="logo">FA Products</h1></a>
+            <?php else: ?>
+                <a class="navbar-brand navbar-brand-title" href="<?php bloginfo('url'); ?>"><h1 class="logo">FA Products</h1></a>
+            <?php endif; ?>
 
-    </div>
-    <div class="col-lg-9 offset-lg-1 px-0 pt-2 d-none d-lg-block clearfix">
-     <ul class="mr-auto mt-2 mt-lg-0 d-inline-block float-right">
-        <li class="nav-bar-navi01-li nav-bar-navi01-li01"><a href="<?php bloginfo('url'); ?>/energy/"><i class="fa fa-play-circle" aria-hidden="true"></i>スマートエネルギー事業</a></li>
-        <li class="nav-bar-navi01-li nav-bar-navi01-li02"><a href="<?php bloginfo('url'); ?>/factory/" ><i class="fa fa-play-circle" aria-hidden="true"></i>スマートファクトリー事業</a></li>
-        <li class="nav-bar-navi01-li nav-bar-navi01-li05"><a href="http://smartfactorylabo.com/" target="_blank"><i class="fa fa-play-circle" aria-hidden="true"></i>スマラボ</a></li>
-        <li class="nav-bar-navi01-li nav-bar-navi01-li05"><a href="https://connected-engineering.com/" target="_blank"><i class="fa fa-play-circle" aria-hidden="true"></i>Team Cross FA</a></li>
-        <li class="nav-bar-navi01-li nav-bar-navi01-li03"><a href="https://fa-products.jp/" ><i class="fa fa-play-circle" aria-hidden="true"></i>企業サイト</a></li>
-        <li class="nav-bar-navi01-li nav-bar-navi01-li04 hover-opa"><p class="example1"><strong>　Tel 03-6453-6761</strong></span></li>
-    </ul>
-    </div><!-- /.navbar-link -->
+        </div>
+        <div class="col-lg-9 offset-lg-1 px-0 pt-2 d-none d-lg-block clearfix">
+            <!-- //　スマホ時非表示 -->
+            <ul class="mr-auto mt-2 mt-lg-0 d-inline-block float-right">
+                <li class="nav-bar-navi01-li nav-bar-navi01-li01"><a href="<?php bloginfo('url'); ?>/energy/"><i class="fa fa-play-circle" aria-hidden="true"></i>スマートエネルギー事業</a></li>
+                <li class="nav-bar-navi01-li nav-bar-navi01-li02"><a href="<?php bloginfo('url'); ?>/factory/" ><i class="fa fa-play-circle" aria-hidden="true"></i>スマートファクトリー事業</a></li>
+                <li class="nav-bar-navi01-li nav-bar-navi01-li05"><a href="http://smartfactorylabo.com/" target="_blank"><i class="fa fa-play-circle" aria-hidden="true"></i>スマラボ</a></li>
+                <li class="nav-bar-navi01-li nav-bar-navi01-li05"><a href="https://connected-engineering.com/" target="_blank"><i class="fa fa-play-circle" aria-hidden="true"></i>Team Cross FA</a></li>
+                <li class="nav-bar-navi01-li nav-bar-navi01-li03"><a href="https://fa-products.jp/" ><i class="fa fa-play-circle" aria-hidden="true"></i>企業サイト</a></li>
+                <li class="nav-bar-navi01-li nav-bar-navi01-li04 hover-opa"><p class="example1"><strong>　Tel 03-6453-6761</strong></span></li>
+            </ul>
+        </div><!-- /.navbar-link -->
     </div><!-- /.row -->
 </div><!-- /.container -->
 
@@ -272,16 +273,17 @@ if ( function_exists( 'ot_get_option' ) ):
     <?php if(is_page(home)) : ?>
         <a class="navbar-brand navbar-brand-title" href="<?php bloginfo('url'); ?>"><h1 class="logo">FA Products</h1></a>
     <?php else: ?>
-        <a class="navbar-brand navbar-brand-title" href="<?php bloginfo('url'); ?>"><div class="logo">FA Products</div></a>
+        <a class="navbar-brand navbar-brand-title" href="<?php bloginfo('url'); ?>"><h1 class="logo">FA Products</h1></a>
     <?php endif; ?>
 
     </div>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#fa-navi-trigger01" aria-controls="fa-navi-trigger01" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#fa-navi-trigger01" aria-controls="fa-navi-trigger01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="fa-navi-trigger01">
+    <!-- //　スマホ時表示 -->
     <ul class="mr-auto mt-2 mt-lg-0 d-inline-block d-lg-none">
         <li class="nav-bar-navi01-li nav-bar-navi01-li01"><a href="<?php bloginfo('url'); ?>/energy/"><i class="fa fa-play-circle" aria-hidden="true"></i>スマートエネルギー事業</a></li>
         <li class="nav-bar-navi01-li nav-bar-navi01-li02"><a href="<?php bloginfo('url'); ?>/factory/" ><i class="fa fa-play-circle" aria-hidden="true"></i>スマートファクトリー事業</a></li>
@@ -290,15 +292,20 @@ if ( function_exists( 'ot_get_option' ) ):
         <li class="nav-bar-navi01-li nav-bar-navi01-li03"><a href="https://fa-products.jp/" ><i class="fa fa-play-circle" aria-hidden="true"></i>企業サイト</a></li>
         <li class="nav-bar-navi01-li nav-bar-navi01-li04 hover-opa"><p class="example1"><strong>Tel 03-6453-6761</strong></span></li>
     </ul>
+    <!-- //　スマホ時表示 -->
     <ul class="navbar-nav mx-auto mt-2 mt-lg-0 d-inline-block d-lg-flex">
-        <li class="nav-bar-navi02-li nav-bar-navi02-li00"><a href="<?php bloginfo('url'); ?>"><span class="nav-bar-navi02-li-txt-t">Top</span><span class="nav-bar-navi02-li-txt-u br"></span></a></li>
-        <li class="nav-bar-navi02-li nav-bar-navi02-li01"><a href="<?php bloginfo('url'); ?>/about.html"><span class="nav-bar-navi02-li-txt-t">会社概要</span><span class="nav-bar-navi02-li-txt-u br">Corporate</span></a></li>
-        <li class="nav-bar-navi02-li nav-bar-navi02-li02"><a href="<?php bloginfo('url'); ?>/vision.html"><span class="nav-bar-navi02-li-txt-t">ビジョン</span><span class="nav-bar-navi02-li-txt-u br">Vision</span></a></li>
-        <li class="nav-bar-navi02-li nav-bar-navi02-li03"><a href="<?php bloginfo('url'); ?>/topics.html"><span class="nav-bar-navi02-li-txt-t">耳より情報</span><span class="nav-bar-navi02-li-txt-u br">Topics</span></a></li>
-        <li class="nav-bar-navi02-li nav-bar-navi02-li04"><a href="<?php bloginfo('url'); ?>/newsrelease.html"><span class="nav-bar-navi02-li-txt-t">ニュース</span><span class="nav-bar-navi02-li-txt-u br">News</span></a></li>
-        <li class="nav-bar-navi02-li nav-bar-navi02-li05"><a href="<?php bloginfo('url'); ?>/recruit.html"><span class="nav-bar-navi02-li-txt-t">採用情報</span><span class="nav-bar-navi02-li-txt-u br">Recruit</span></a></li>
-        <li class="nav-bar-navi02-li nav-bar-navi02-li07"><a href="<?php bloginfo('url'); ?>/about.html#Access"><span class="nav-bar-navi02-li-txt-t">アクセス</span><span class="nav-bar-navi02-li-txt-u br">Access</span></a></li>
-        <li class="nav-bar-navi02-li nav-bar-navi02-li06"><a href="<?php bloginfo('url'); ?>/contact.html"><span class="nav-bar-navi02-li-txt-t">お問い合わせ</span><span class="nav-bar-navi02-li-txt-u br">Contact</span></a></li>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li00 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>"><span class="nav-bar-navi02-li-txt-t">Top</span><span class="nav-bar-navi02-li-txt-u br"></span></a></li>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li01 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/about.html"><span class="nav-bar-navi02-li-txt-t">会社概要</span><span class="nav-bar-navi02-li-txt-u br">Corporate</span></a>
+            <?php wp_nav_menu( array('theme_location'=>'fa-products-corp-menu-1') ) ?>
+        </li>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li02 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/vision.html"><span class="nav-bar-navi02-li-txt-t">ビジョン</span><span class="nav-bar-navi02-li-txt-u br">Vision</span></a></li>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li03 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/topics.html"><span class="nav-bar-navi02-li-txt-t">耳より情報</span><span class="nav-bar-navi02-li-txt-u br">Topics</span></a></li>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li04 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/newsrelease.html"><span class="nav-bar-navi02-li-txt-t">ニュース</span><span class="nav-bar-navi02-li-txt-u br">News</span></a></li>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li05 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/recruit.html"><span class="nav-bar-navi02-li-txt-t">採用情報</span><span class="nav-bar-navi02-li-txt-u br">Recruit</span></a>
+            <?php wp_nav_menu( array('theme_location'=>'fa-products-corp-menu-5') ) ?>
+        </li>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li07 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/about.html#Access"><span class="nav-bar-navi02-li-txt-t">アクセス</span><span class="nav-bar-navi02-li-txt-u br">Access</span></a></li>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li06 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/contact.html"><span class="nav-bar-navi02-li-txt-t">お問い合わせ</span><span class="nav-bar-navi02-li-txt-u br">Contact</span></a></li>
 
     </ul>
     </div>

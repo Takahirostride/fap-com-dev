@@ -322,7 +322,7 @@ if ( $the_query->have_posts() ) :
 
 
 
-<section class="news_bg news_release my-5 py-5">
+<section class="news_bg news_release my-5 py-md-5">
     <div class="container trsp_black py-5">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
@@ -355,7 +355,7 @@ if ( $the_query->have_posts() ) :
 
                     </div><!-- /.box-page -->
 
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 pt-5 pt-lg-0 text-center">
                         <button class="btn-fa-brast text-white">
                             <a class="text-white" href="<?php bloginfo('url'); ?>/newsrelease.html">MORE ></a>
                         </button>
