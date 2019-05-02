@@ -11,6 +11,10 @@
 }
 
 /*navigation*/
+.navbar-nav li a {
+    color: #333;
+}
+
 .navbar-nav li:hover ul{
     @include mq(large){
         display: block;
@@ -165,15 +169,5 @@ background-color: #000080
     padding: initial;
 }
 
-/*page contents*/
-.mpage_block {padding:50px 10px;}
-.mbox-page {max-width:none;margin:0 auto;text-align:center;}
-.mbox_left {display:inline-block;vertical-align:top;width:350px}
-.mbox_center {display:inline-block;vertical-align:top;width:350px;}
-.mbox_right {display:inline-block;vertical-align:top;width:350px;}
-.mofficers {text-align:left;}
-.mofficer_txt{font-size:12px;}
-.mofficers_img {float:left;margin-right:5px;margin-bottom:10px;}
-.mofficers dl dt {font-size:12px;color:#07a3fd;}
-.mofficers dl dd {font-size:18px;font-weight:bold;}
-.name_s {font-size:11px;padding-left:0px;font-weight:normal;}
+/*particle*/
+ #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #ffffff; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }

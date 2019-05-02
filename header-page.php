@@ -252,7 +252,7 @@ if ( function_exists( 'ot_get_option' ) ):
 
         </div>
         <div class="col-lg-9 offset-lg-1 px-0 pt-2 d-none d-lg-block clearfix">
-            <!-- //　スマホ時非表示 -->
+            <!-- //　スマホ時非表示> -->
             <ul class="mr-auto mt-2 mt-lg-0 d-inline-block float-right">
                 <li class="nav-bar-navi01-li nav-bar-navi01-li01"><a href="<?php bloginfo('url'); ?>/energy/"><i class="fa fa-play-circle" aria-hidden="true"></i>スマートエネルギー事業</a></li>
                 <li class="nav-bar-navi01-li nav-bar-navi01-li02"><a href="<?php bloginfo('url'); ?>/factory/" ><i class="fa fa-play-circle" aria-hidden="true"></i>スマートファクトリー事業</a></li>
@@ -261,6 +261,7 @@ if ( function_exists( 'ot_get_option' ) ):
                 <li class="nav-bar-navi01-li nav-bar-navi01-li03"><a href="https://fa-products.jp/" ><i class="fa fa-play-circle" aria-hidden="true"></i>企業サイト</a></li>
                 <li class="nav-bar-navi01-li nav-bar-navi01-li04 hover-opa"><p class="example1"><strong>　Tel 03-6453-6761</strong></span></li>
             </ul>
+            <!-- //　<スマホ時非表示 -->
         </div><!-- /.navbar-link -->
     </div><!-- /.row -->
 </div><!-- /.container -->
@@ -269,13 +270,13 @@ if ( function_exists( 'ot_get_option' ) ):
 <nav id="navbar-fap" class="navbar-fap navbar navbar-expand-lg navbar-light whitemenu mb-1">
 
     <div class="logo-wrap d-inline-block d-lg-none pl-2 pt-2">
-
+    <!-- //　スマホ時表示> -->
     <?php if(is_page(home)) : ?>
         <a class="navbar-brand navbar-brand-title" href="<?php bloginfo('url'); ?>"><h1 class="logo">FA Products</h1></a>
     <?php else: ?>
         <a class="navbar-brand navbar-brand-title" href="<?php bloginfo('url'); ?>"><h1 class="logo">FA Products</h1></a>
     <?php endif; ?>
-
+    <!-- //　<スマホ時表示 -->
     </div>
 
     <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#fa-navi-trigger01" aria-controls="fa-navi-trigger01" aria-expanded="false" aria-label="Toggle navigation">
@@ -283,8 +284,8 @@ if ( function_exists( 'ot_get_option' ) ):
     </button>
 
     <div class="collapse navbar-collapse" id="fa-navi-trigger01">
-    <!-- //　スマホ時表示 -->
-    <ul class="mr-auto mt-2 mt-lg-0 d-inline-block d-lg-none">
+    <!-- //　スマホ時表示> -->
+    <ul class="mr-auto mt-2 mt-lg-0 d-inline-block d-lg-none menu__list">
         <li class="nav-bar-navi01-li nav-bar-navi01-li01"><a href="<?php bloginfo('url'); ?>/energy/"><i class="fa fa-play-circle" aria-hidden="true"></i>スマートエネルギー事業</a></li>
         <li class="nav-bar-navi01-li nav-bar-navi01-li02"><a href="<?php bloginfo('url'); ?>/factory/" ><i class="fa fa-play-circle" aria-hidden="true"></i>スマートファクトリー事業</a></li>
         <li class="nav-bar-navi01-li nav-bar-navi01-li05"><a href="http://smartfactorylabo.com/" target="_blank"><i class="fa fa-play-circle" aria-hidden="true"></i>スマラボ</a></li>
@@ -292,8 +293,8 @@ if ( function_exists( 'ot_get_option' ) ):
         <li class="nav-bar-navi01-li nav-bar-navi01-li03"><a href="https://fa-products.jp/" ><i class="fa fa-play-circle" aria-hidden="true"></i>企業サイト</a></li>
         <li class="nav-bar-navi01-li nav-bar-navi01-li04 hover-opa"><p class="example1"><strong>Tel 03-6453-6761</strong></span></li>
     </ul>
-    <!-- //　スマホ時表示 -->
-    <ul class="navbar-nav mx-auto mt-2 mt-lg-0 d-inline-block d-lg-flex">
+    <!-- //　<スマホ時表示 -->
+    <ul class="navbar-nav mx-auto mt-2 mt-lg-0 d-inline-block d-lg-flex menu__list">
         <li class="nav-bar-navi02-li nav-bar-navi02-li00 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>"><span class="nav-bar-navi02-li-txt-t">Top</span><span class="nav-bar-navi02-li-txt-u br"></span></a></li>
         <li class="nav-bar-navi02-li nav-bar-navi02-li01 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/about.html"><span class="nav-bar-navi02-li-txt-t">会社概要</span><span class="nav-bar-navi02-li-txt-u br">Corporate</span></a>
             <?php wp_nav_menu( array('theme_location'=>'fa-products-corp-menu-1') ) ?>

@@ -81,7 +81,7 @@ Template Name:FAProject HOME
             </div>
             </a>
         </div>
-    </div>
+    </div><!-- /.row -->
 </div>
 </section>
 
@@ -97,7 +97,7 @@ Template Name:FAProject HOME
                 <p>製品ライフサイクルが短命化しても、投資効果を出せるSmart Factoryをつくりたい。<br/>Smart Factoryに挑戦するエンジニアや企業の第１歩を後押ししていきたい。</p>
                 <p>その一歩を束ねることで日本の製造業に大きな変化をおこして未来を創りだす。</p>
             </div>
-        </div>
+        </div><!-- /.row -->
     </div>
 </section>
 
@@ -106,13 +106,13 @@ Template Name:FAProject HOME
 
 <section class="">
 <div class="container">
+
 <div class="cont-h2">
-<h2 class="cont-h2-txt">新着情報</h2>
-<div class="cont-h2-subtxt">NEWS</div>
+    <h2 class="cont-h2-txt">新着情報</h2>
+    <div class="cont-h2-subtxt">NEWS</div>
 </div>
 
-<div class="cont_home_news_wrap row bg-secondary">
-                            <?php
+<?php
 /*
 各ブログから記事取得「news」「knowledge」、「case_study」。
 */
@@ -143,42 +143,70 @@ $sql .= "LIMIT " . ($pg-1) * 1 . ", 1";//記事を0番目から30個、30番目�
 $posts = $wpdb->get_results($sql);//改めて記事のセットを取得
 
 ?>
+
 <?php
 foreach ($posts as $post):
 			switch_to_blog($post->blog_id);
 			setup_postdata($post);
 ?>
-<li class="col-md-7 p-0 bg-primary">
-<a href="<?php the_permalink();?>"><?php $attachment_id=get_field('image',$post->ID);
-    echo wp_get_attachment_image($attachment_id,array(723, 534));?>
-</a>
 
-<span class="stitle">
-<a href="<?php the_permalink();?>">
-    <h2 class="home_news_tit_link"><?php if(mb_strlen($post->post_title)>56) { $title= mb_substr($post->post_title,0,56) ; echo $title. ･･･ ;
-    } else {echo $post->post_title;}?></h2>
-</a>
-<span class="stitle_ymd"><?php the_time('Y.m.d'); ?></span>
+<div class="row mb-3">
+<div class="col-md-3 text-center mb-2 mb-md-0">
+    <a href="<?php the_permalink();?>">
+    <?php
+        $attachment_id=get_field('image',$post->ID);
+        echo wp_get_attachment_image(
+            $attachment_id,
+            'midium-thumb',
+            false,
+            array(
+                'class' => 'img-fluid'
+            )
+        );
+    ?>
+    </a>
+</div><!--/.col-->
+<div class="col-md-9">
+    <a class="text-dark" href="<?php the_permalink();?>">
+        <h2 class="home_news_tit_link mb-3">
+            <?php
+                if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
+                else {echo $post->post_title;}
+            ?>
+        </h2>
+        <p class="px-2">
+            <?php
+                if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
+                $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
+                echo $content . '…';
+                } else {
+                echo str_replace( '\n', '', strip_tags( $post->post_content ) );
+                }
+            ?>
+        </p>
+    </a>
 
-<span class="stitle_tags">
-<?php
-    $terms = get_the_terms( $post->ID, 'class_tag' );
-    if ($terms && ! is_wp_error($terms)): ?>
-<?php foreach($terms as $term): ?>
-    <span class="home_news_tags home_news_tags_<?php echo $term->slug; ?>">
-        <a href="<?php echo get_term_link( $term->slug, 'class_tag'); ?>">
-            <?php echo $term->name; ?>
-        </a>
+    <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
+
+    <span class="stitle_tags">
+        <?php
+            $terms = get_the_terms( $post->ID, 'class_tag' );
+            if ($terms && ! is_wp_error($terms)): ?>
+            <?php foreach($terms as $term): ?>
+                <span class="home_news_tags home_news_tags_<?php echo $term->slug; ?>">
+                    <a href="<?php echo get_term_link( $term->slug, 'class_tag'); ?>">
+                        <?php echo $term->name; ?>
+                    </a>
+                </span>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </span>
-    <?php endforeach; ?>
-<?php endif; ?>
-</span>
-</li><!--/.col-->
 
+</div><!--/.col-->
+</div><!-- /.row -->
 <?php endforeach;?>
 
-
-<li class="col-md-5 pl-md-3">
+<hr>
 
 <?php
 $paged = (int) get_query_var('paged');
@@ -197,31 +225,63 @@ $the_query = new WP_Query($args);
 if ( $the_query->have_posts() ) :
     while ( $the_query->have_posts() ) : $the_query->the_post();
 ?>
-<div class="cont_home_news_right01 p-0">
-    <a href="<?php the_permalink();?>"><?php $attachment_id=get_field('image',$post->ID);
-    echo wp_get_attachment_image($attachment_id,'midium-thumb');?></a>
-    <!--<a href="<?php the_permalink();?>"><?php $attachment_id=get_field('image',$post->ID);
-    echo wp_get_attachment_image($attachment_id,array(441, 296));?></a>-->
-    <span class="stitle">
-        <a href="<?php the_permalink();?>"><h2 class="home_news_tit_link"><?php if(mb_strlen($post->post_title)>38) { $title= mb_substr($post->post_title,0,38) ; echo $title. ･･･ ;
-} else {echo $post->post_title;}?></h2></a>
-        <span class="stitle_ymd"><?php the_time('Y.m.d'); ?></span>
-        <span class="stitle_tags">
+
+<div class="row flex-row-reverse mb-3">
+<div class="col-md-3 text-center mb-2 mb-md-0">
+    <a href="<?php the_permalink();?>">
+        <?php
+            $attachment_id=get_field('image',$post->ID);
+            echo wp_get_attachment_image(
+                $attachment_id,
+                'midium-thumb',
+                false,
+                array(
+                    'class' => 'img-fluid'
+                )
+            );
+        ?>
+    </a>
+</div><!--/.col-->
+<div class="col-md-9">
+    <a class="text-dark" href="<?php the_permalink();?>">
+        <h2 class="home_news_tit_link mb-3">
             <?php
-            $terms = get_the_terms( $post->ID, 'class_tag' );
-            if ($terms && ! is_wp_error($terms)): ?>
-                <?php foreach($terms as $term): ?>
-                <span class="home_news_tags home_news_tags_<?php echo $term->slug; ?>">
-                    <a href="<?php echo get_term_link( $term->slug, 'class_tag'); ?>">
-                        <?php echo $term->name; ?>
-                    </a>
-                    </span>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </span>
+                if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
+                else {echo $post->post_title;}
+            ?>
+        </h2>
+        <p class="px-2">
+            <?php
+                if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
+                $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
+                echo $content . '…';
+                } else {
+                echo str_replace( '\n', '', strip_tags( $post->post_content ) );
+                }
+            ?>
+        </p>
+    </a>
+
+    <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
+
+    <span class="stitle_tags">
+        <?php
+        $terms = get_the_terms( $post->ID, 'class_tag' );
+        if ($terms && ! is_wp_error($terms)): ?>
+            <?php foreach($terms as $term): ?>
+            <span class="home_news_tags home_news_tags_<?php echo $term->slug; ?>">
+                <a href="<?php echo get_term_link( $term->slug, 'class_tag'); ?>">
+                    <?php echo $term->name; ?>
+                </a>
+                </span>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </span>
-</div>
+</div><!--/.col-->
+</div><!--/.row-->
 <?php endwhile; endif; ?>
+
+<hr>
 
 <?php
 $paged = (int) get_query_var('paged');
@@ -240,29 +300,63 @@ $the_query = new WP_Query($args);
 if ( $the_query->have_posts() ) :
     while ( $the_query->have_posts() ) : $the_query->the_post();
 ?>
-<div class="cont_home_news_right02 p-0">
-    <a href="<?php the_permalink();?>"><?php $attachment_id=get_field('image',$post->ID);
-    echo wp_get_attachment_image($attachment_id,array(203, 203));?></a>
-    <span class="stitle">
-        <a href="<?php the_permalink();?>"><h2 class="home_news_tit_link"><?php if(mb_strlen($post->post_title)>15) { $title= mb_substr($post->post_title,0,15) ; echo $title. ･･･ ;
-} else {echo $post->post_title;}?></h2></a>
-        <span class="stitle_ymd"><?php the_time('Y.m.d'); ?></span>
-        <!--<span class="stitle_tags">
+
+<div class="row mb-3">
+<div class="col-md-3 text-center mb-2 mb-md-0">
+    <a href="<?php the_permalink();?>">
+        <?php
+            $attachment_id=get_field('image',$post->ID);
+            echo wp_get_attachment_image(
+                $attachment_id,
+                'midium-thumb',
+                false,
+                array(
+                    'class' => 'img-fluid'
+                )
+            );
+        ?>
+    </a>
+</div><!--/.col-->
+<div class="col-md-9">
+    <a class="text-dark" href="<?php the_permalink();?>">
+        <h2 class="home_news_tit_link mb-3">
             <?php
-            $terms = get_the_terms( $post->ID, 'class_tag' );
-            if ($terms && ! is_wp_error($terms)): ?>
-                <?php foreach($terms as $term): ?>
-                <span class="home_news_tags home_news_tags_<?php echo $term->slug; ?>">
-                    <a href="<?php echo get_term_link( $term->slug, 'class_tag'); ?>">
-                        <?php echo $term->name; ?>
-                    </a>
-                    </span>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </span>-->
-    </span>
-</div>
+                if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
+                else {echo $post->post_title;}
+            ?>
+        </h2>
+        <p class="px-2">
+            <?php
+                if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
+                $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
+                echo $content . '…';
+                } else {
+                echo str_replace( '\n', '', strip_tags( $post->post_content ) );
+                }
+            ?>
+        </p>
+    </a>
+
+    <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
+
+    <!--<span class="stitle_tags">
+        <?php
+        $terms = get_the_terms( $post->ID, 'class_tag' );
+        if ($terms && ! is_wp_error($terms)): ?>
+            <?php foreach($terms as $term): ?>
+            <span class="home_news_tags home_news_tags_<?php echo $term->slug; ?>">
+                <a href="<?php echo get_term_link( $term->slug, 'class_tag'); ?>">
+                    <?php echo $term->name; ?>
+                </a>
+                </span>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </span>-->
+</div><!--/.col-->
+</div><!--/.row-->
 <?php endwhile; endif; ?>
+
+<hr>
 
 <?php
 $paged = (int) get_query_var('paged');
@@ -282,44 +376,70 @@ if ( $the_query->have_posts() ) :
     while ( $the_query->have_posts() ) : $the_query->the_post();
 ?>
 
-<div class="cont_home_news_right02 d-none">
-    <a href="<?php the_permalink();?>"><?php $attachment_id=get_field('image',$post->ID);
-    echo wp_get_attachment_image($attachment_id,array(200, 200));?></a>
-    <span class="stitle">
-        <a href="<?php the_permalink();?>"><h2 class="home_news_tit_link"><?php if(mb_strlen($post->post_title)>15) { $title= mb_substr($post->post_title,0,15) ; echo $title. ･･･ ;
-} else {echo $post->post_title;}?></h2></a>
-        <span class="stitle_ymd"><?php the_time('Y.m.d'); ?></span>
-        <!--<span class="stitle_tags">
+<div class="row flex-row-reverse mb-3">
+<div class="col-md-3 text-center mb-2 mb-md-0">
+    <a href="<?php the_permalink();?>">
+        <?php
+            $attachment_id=get_field('image',$post->ID);
+            echo wp_get_attachment_image(
+                $attachment_id,
+                'midium-thumb',
+                false,
+                array(
+                    'class' => 'img-fluid'
+                )
+            );
+        ?>
+    </a>
+</div><!--/.col-->
+<div class="col-md-9">
+    <a class="text-dark" href="<?php the_permalink();?>">
+        <h2 class="home_news_tit_link mb-3">
             <?php
-            $terms = get_the_terms( $post->ID, 'class_tag' );
-            if ($terms && ! is_wp_error($terms)): ?>
-                <?php foreach($terms as $term): ?>
-                <span class="home_news_tags home_news_tags_<?php echo $term->slug; ?>">
-                    <a href="<?php echo get_term_link( $term->slug, 'class_tag'); ?>">
-                        <?php echo $term->name; ?>
-                    </a>
-                    </span>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </span>-->
-    </span>
-</div>
+                if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
+                else {echo $post->post_title;}
+            ?>
+        </h2>
+        <p class="px-2">
+            <?php
+                if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
+                $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
+                echo $content . '…';
+                } else {
+                echo str_replace( '\n', '', strip_tags( $post->post_content ) );
+                }
+            ?>
+        </p>
+    </a>
 
+    <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
+
+    <!--<span class="stitle_tags">
+        <?php
+        $terms = get_the_terms( $post->ID, 'class_tag' );
+        if ($terms && ! is_wp_error($terms)): ?>
+            <?php foreach($terms as $term): ?>
+            <span class="home_news_tags home_news_tags_<?php echo $term->slug; ?>">
+                <a href="<?php echo get_term_link( $term->slug, 'class_tag'); ?>">
+                    <?php echo $term->name; ?>
+                </a>
+                </span>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </span>-->
+</div><!--/.col-->
+</div><!--/.row-->
 <?php endwhile; endif; ?>
 
-</li><!--/.col-->
+<hr>
 
-</div>
 <?php wp_reset_query(); ?>
 <?php wp_reset_postdata(); ?>
 <?php restore_current_blog(); //子ブログ終了時に入れる?>
-<div class="clear"></div>
-
 
 </div><!-- .cont_half_02_wrap -->
 </div><!-- .container -->
 </section>
-
 
 
 <section class="news_bg news_release my-5 py-md-5">
@@ -350,7 +470,23 @@ if ( $the_query->have_posts() ) :
                             if ( $the_query->have_posts() ) :
                             while ( $the_query->have_posts() ) : $the_query->the_post();
                             ?>
-                    <li class="text-white"><span class="news_date"><?php the_time('Y/m/d'); ?></span><br class="br_sp" /><a class="text-white" href="<?php the_permalink();?>"><?php the_title(); ?></a></li>
+                    <li class="text-white mb-3">
+                        <span class="news_date"><?php the_time('Y/m/d'); ?></span><br class="br_sp" />
+                        <a class="text-white" href="<?php the_permalink();?>">
+                            <?php the_title(); ?><br>
+                            <small class="pl-4">
+                            <?php
+                                if ( mb_strlen( $post->post_content, 'UTF-8' ) > 82 ) {
+                                $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 82, 'UTF-8' ) );
+                                echo $content . '…';
+                                } else {
+                                echo str_replace( '\n', '', strip_tags( $post->post_content ) );
+                                }
+                            ?>
+                            </small>
+                        </a>
+                    </li>
+
                     <?php endwhile; endif; ?>
 
                     </div><!-- /.box-page -->
@@ -365,6 +501,12 @@ if ( $the_query->have_posts() ) :
         </div><!-- /.row -->
     </div><!-- .container -->
 </section>
+
+<section>
+
+
+</section>
+
 
     <!--
     <div class="sigle-btn-cont cont-btn-wrap02 hover-opa">

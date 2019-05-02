@@ -20,7 +20,7 @@ p{font-size:18px}
 
 				<div class="entry-content">
 					<section class="page_block page_block_top">
-                    <h2 class="sub-title">中途採用</h2>
+                    <h2 class="sub-title">経験者採用</h2>
                     
                     <?php
                     $paged = (int) get_query_var('paged');
