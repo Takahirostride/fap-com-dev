@@ -21,6 +21,10 @@ Template Name:FAProject HOME
 
 <section class="fap-enterprise">
 <div class="container">
+    <div class="cont-h2 mb-0">
+        <h2 class="cont-h2-txt text-center mt-5">FAプロダクツ基幹事業</h2>
+        <div class="cont-h2-subtxt bg-white text-center">ENTERPRISE</div>
+    </div>
     <div class="row">
         <div class="col-12 col-md-4 cont_three_column_li_wrap">
             <a href="https://fa-products.jp/factory/">
@@ -168,23 +172,26 @@ foreach ($posts as $post):
 </div><!--/.col-->
 <div class="col-md-9">
     <a class="text-dark" href="<?php the_permalink();?>">
-        <h2 class="home_news_tit_link mb-3">
+        <h2 class="home_news_tit_link mb-3"><i class="fas fa-project-diagram aura"></i>
             <?php
                 if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
                 else {echo $post->post_title;}
             ?>
         </h2>
-        <p class="px-2">
-            <?php
-                if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
-                $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
-                echo $content . '…';
-                } else {
-                echo str_replace( '\n', '', strip_tags( $post->post_content ) );
-                }
-            ?>
-        </p>
     </a>
+    <p class="px-2">
+        <?php
+            if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
+            $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
+            echo $content . '…';
+            } else {
+            echo str_replace( '\n', '', strip_tags( $post->post_content ) );
+            }
+        ?>
+    </p>
+    <button class="btn-fa-cv">
+        <a href="<?php the_permalink();?>">MORE ></a>
+    </button>
 
     <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
 
@@ -244,23 +251,26 @@ if ( $the_query->have_posts() ) :
 </div><!--/.col-->
 <div class="col-md-9">
     <a class="text-dark" href="<?php the_permalink();?>">
-        <h2 class="home_news_tit_link mb-3">
+        <h2 class="home_news_tit_link mb-3"><i class="fas fa-project-diagram aura aura2"></i>
             <?php
                 if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
                 else {echo $post->post_title;}
             ?>
         </h2>
-        <p class="px-2">
-            <?php
-                if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
-                $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
-                echo $content . '…';
-                } else {
-                echo str_replace( '\n', '', strip_tags( $post->post_content ) );
-                }
-            ?>
-        </p>
     </a>
+    <p class="px-2">
+        <?php
+            if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
+            $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
+            echo $content . '…';
+            } else {
+            echo str_replace( '\n', '', strip_tags( $post->post_content ) );
+            }
+        ?>
+    </p>
+    <button class="btn-fa-cv">
+        <a href="<?php the_permalink();?>">MORE ></a>
+    </button>
 
     <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
 
@@ -319,23 +329,26 @@ if ( $the_query->have_posts() ) :
 </div><!--/.col-->
 <div class="col-md-9">
     <a class="text-dark" href="<?php the_permalink();?>">
-        <h2 class="home_news_tit_link mb-3">
+        <h2 class="home_news_tit_link mb-3"><i class="fas fa-project-diagram aura"></i>
             <?php
                 if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
                 else {echo $post->post_title;}
             ?>
         </h2>
-        <p class="px-2">
-            <?php
-                if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
-                $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
-                echo $content . '…';
-                } else {
-                echo str_replace( '\n', '', strip_tags( $post->post_content ) );
-                }
-            ?>
-        </p>
     </a>
+    <p class="px-2">
+        <?php
+            if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
+            $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
+            echo $content . '…';
+            } else {
+            echo str_replace( '\n', '', strip_tags( $post->post_content ) );
+            }
+        ?>
+    </p>
+    <button class="btn-fa-cv">
+        <a href="<?php the_permalink();?>">MORE ></a>
+    </button>
 
     <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
 
@@ -394,23 +407,26 @@ if ( $the_query->have_posts() ) :
 </div><!--/.col-->
 <div class="col-md-9">
     <a class="text-dark" href="<?php the_permalink();?>">
-        <h2 class="home_news_tit_link mb-3">
+        <h2 class="home_news_tit_link mb-3"><i class="fas fa-project-diagram aura aura2"></i>
             <?php
                 if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
                 else {echo $post->post_title;}
             ?>
         </h2>
-        <p class="px-2">
-            <?php
-                if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
-                $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
-                echo $content . '…';
-                } else {
-                echo str_replace( '\n', '', strip_tags( $post->post_content ) );
-                }
-            ?>
-        </p>
     </a>
+    <p class="px-2">
+        <?php
+            if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
+            $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
+            echo $content . '…';
+            } else {
+            echo str_replace( '\n', '', strip_tags( $post->post_content ) );
+            }
+        ?>
+    </p>
+    <button class="btn-fa-cv">
+        <a href="<?php the_permalink();?>">MORE ></a>
+    </button>
 
     <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
 

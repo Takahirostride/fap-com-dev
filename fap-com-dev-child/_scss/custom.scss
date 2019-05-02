@@ -83,7 +83,7 @@ background-color: #000080
 
 .mission_bg {
     background:
-    linear-gradient(to right,rgba(0,0,0,.9) 30%, rgba(255,255,0,.5) 90%), 
+    linear-gradient(to right,rgba(0,0,0,.9) 30%, rgba(255,255,0,.5) 90%),
     url(../images/bg_mission_2019a.jpg)center no-repeat;
     background-size: cover;
     background-blend-mode: color;
@@ -91,7 +91,7 @@ background-color: #000080
 
 .news_bg {
     background:
-    linear-gradient(rgba(255,255,255,.1) 0%, rgba(255,255,255,1) 90%), 
+    linear-gradient(rgba(255,255,255,.1) 0%, rgba(255,255,255,1) 90%),
     url(../images/bg_solarpanel.jpg)center bottom no-repeat;
     background-size: cover;
     background-blend-mode: screen;
@@ -107,8 +107,8 @@ background-color: #000080
     }
     @include mq(medium){
     background:
-        linear-gradient(rgba(000,255,255,.1) 0%, rgba(000,255,255,.5) 90%), 
-        linear-gradient(to right, rgba(0,0,0,.8) 60%, rgba(000,255,255,.25) 90%), 
+        linear-gradient(rgba(000,255,255,.1) 0%, rgba(000,255,255,.5) 90%),
+        linear-gradient(to right, rgba(0,0,0,.8) 60%, rgba(000,255,255,.25) 90%),
         url(../images/bg_aircraft.jpg)center bottom no-repeat;
     background-size: cover;
     background-blend-mode: overlay;
@@ -117,6 +117,37 @@ background-color: #000080
 }
 
 /*btn set*/
+/*cv*/
+.btn-fa-cv {
+    color: #e5d272;
+    background: #f6f7c5;
+    border: none;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.btn-fa-cv:hover {
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    background: transparent;
+    color: #f6f7c5;
+}
+.btn-fa-cv:hover:after {
+    transition: all 0.3s ease;
+    width: 100%;
+    left: 0;
+}
+.btn-fa-cv:after {
+    position: absolute;
+    transition: all 0.3s ease;
+    content: '';
+    width: 0;
+    bottom: 0;
+    left: inherit;
+    right: 0;
+    height: 3px;
+    background: #f6f7c5;
+}
+/*brast*/
 .btn-fa-brast {
     position: relative;
     display: inline-block;
@@ -167,6 +198,87 @@ background-color: #000080
 
 .home .entry-content h2, .entry-content h4{
     padding: initial;
+}
+
+.history-company{
+    padding: 0 15px;
+}
+
+.home_news_tit_link {
+    @include mq(medium){
+        font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+        font-size: 18px;
+    }
+}
+
+/*footer*/
+.main_footer_ul {
+    @include mq(xsmall){
+        display: block;
+    }
+    @include mq(medium){
+        display: flex;
+        justify-content: center;
+    }
+}
+.main_footer_li {
+    @include mq(xsmall){
+        display: inline-block;
+        float: left;
+        width: 50%;
+        padding: 5% 0;
+        border-bottom: 1px dotted #efefef;
+    }
+    @include mq(medium){
+        float: none;
+        width: auto;
+        padding: 2em;
+        border-bottom: none;
+    }
+}
+
+
+/* aura effect*/
+@keyframes aura{
+    0%{transform:scale(.95); opacity:1}
+    90%{opacity:.8}to{transform:scale(1.1,1.1); opacity:.8}
+    }
+.aura {
+    position: relative;
+    transition: 7s;
+    @include mq(medium){
+        width: 30px;
+    }
+    }
+.aura:before {
+    content: "";
+    position: absolute;
+    z-index: -10;
+    width: 2em;
+    height: 2em;
+    top: -10px;
+    left: 0;
+    border-radius: 32px;
+    background: #fff;
+    border: 1px solid #ff999e;
+    color: #ff999e;
+    transform: translate3d(0,0,0);
+}
+.aura:before {
+    opacity: .5;
+    @include mq(medium){
+        opacity: 1;
+        animation: aura 7s ease-in-out infinite;
+    }
+}
+.aura.aura2:before {
+    border: 1px solid #1b8bcc;
+    color: #1b8bcc;
+    opacity: .5;
+    @include mq(medium){
+        opacity: 1;
+        animation: aura 7s ease-in-out infinite;
+    }
 }
 
 /*particle*/
