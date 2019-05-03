@@ -148,18 +148,37 @@ Template Name:FAProject ABOUT
         <div class="row">
             <div class="col-lg-4">
                 <p class="partner_catch partner_catch_b">スマートファクトリー事業</p>
-                <p class="partner_txt"><a href="http://www.office-fa.com/ja/index.html" target=”_blank”>オフィス　エフエイ・コム、</a><a href="http://robotcom.jp/" target=”_blank”>ロボコム、</a><br><a href="http://www.jss1.jp/index.html" target=”_blank”>日本サポートシステム</a></p>
+                <ul class="partner_txt text-left">
+                    <li>
+                        <a class="text-dark" href="http://www.office-fa.com/ja/index.html" target=”_blank”>オフィス　エフエイ・コム</a>
+                    </li>
+                    <li>
+                        <a class="text-dark" href="http://robotcom.jp/" target=”_blank”>ロボコム</a>
+                    </li>
+                    <li>
+                        <a class="text-dark" href="http://www.jss1.jp/index.html" target=”_blank”>日本サポートシステム</a>
+                    </li>
+                </ul>
                 <!--<p class="partner_txt"><i class="fa fa-play-circle" aria-hidden="true"></i><a href="##">その他FA系パートナー企業</a></p>-->
             </div>
             <div class="col-lg-4">
                 <p class="partner_catch partner_catch_bk">IoTサーバー/ゲートウェイ事業</p>
-                <p class="partner_txt"><a href="https://www.weintek.com/globalw/" target=”_blank”>WEINTEK</a></p>
+                <ul class="partner_txt text-left">
+                    <li>
+                        <a class="text-dark" href="https://www.weintek.com/globalw/" target=”_blank”>WEINTEK</a>
+                    </li>
+                </ul>
                 <!--<p class="partner_txt"><i class="fa fa-play-circle" aria-hidden="true"></i><a href="https://fa-products.jp/energy/product">その他環境、エネルギー系パートナー企業</a></p>-->
             </div>
             <div class="col-lg-4">
                 <p class="partner_catch partner_catch_r">スマートエネルギー事業</p>
-                <p class="partner_txt">ワイドミュラー、リープトンエナジー</p>
-                <p class="partner_txt"><i class="fa fa-play-circle" aria-hidden="true"></i><a href="https://fa-products.jp/energy/product">その他環境、エネルギー系パートナー企業</a></p>
+                <ul class="partner_txt text-left">
+                    <li>ワイドミュラー</li>
+                    <li>リープトンエナジー</li>
+                    <li>
+                        <a class="text-dark" href="https://fa-products.jp/energy/product">その他環境、エネルギー系パートナー企業</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

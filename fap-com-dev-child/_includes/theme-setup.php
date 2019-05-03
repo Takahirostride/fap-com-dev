@@ -32,9 +32,9 @@ function craftowp_setup() {
     set_post_thumbnail_size( 360, 236, true ); // Normal post thumbnails
     add_image_size( 'portfolio', 670, 440, true ); // Hard Crop Mode
     add_image_size( 'blog', 750, 320, true ); // Hard Crop Mode
-    add_image_size( 'article-thumb', 357, 224, true ); 
-    add_image_size( 'news-thumb', 163, 115, true ); 
-    
+    add_image_size( 'article-thumb', 357, 224, true );
+    add_image_size( 'news-thumb', 163, 115, true );
+
     // Image sizes
 	update_option('thumbnail_size_w', 240);
 	update_option('thumbnail_size_h', 240);
@@ -102,11 +102,11 @@ function crafto_scripts_styles() {
 	wp_localize_script( 'scripts', 'theme_path', $theme_array );
 
 	// Loads CSS files.
-	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', false, '3.3.1');
+	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', false, '3.3.1');
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), null, false);
 	wp_enqueue_style('lightbox', get_stylesheet_directory_uri() . '/css/prettyPhoto.css', false, '1.0');
 	wp_enqueue_style('animate', get_stylesheet_directory_uri() . '/css/animate.css', false, '1.0');
-	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/css/style.css', false, '2.0.1');
+	//wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', false, '2.0.1');
 }
 
 

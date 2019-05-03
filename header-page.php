@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
-<head>
 
+<head>
 <!-- Google Tag Manager -->
 <script>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -14,7 +14,21 @@
 <!-- //juicer -->
 
 <meta charset="<?php bloginfo( 'charset' ); ?>">
+<!-- viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script>
+    var contentWidth = 960; // コンテンツの幅に合わせて修正してください
+    var ua = navigator.userAgent; // ユーザーエージェントの取得
+    if((ua.indexOf('Android') > 0 && ua.indexOf('Mobile') == -1) || ua.indexOf('iPad') > 0 || ua.indexOf('Kindle') > 0 || ua.indexOf('Silk') > 0){
+      // タブレット端末だった場合の処理
+      document.write('<meta name="viewport" content="width=' + contentWidth + '">');
+    } else {
+      // タブレット端末ではない場合の処理
+      document.write('<meta name="viewport" content="width=device-width">');
+    }
+</script>
+<!-- //viewport -->
 
 <title>
 <?php if(is_search())://検索結果ページ ?>
@@ -25,9 +39,6 @@
 
 <?php endif; ?>
 </title>
-
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 <?php if ( function_exists( 'ot_get_option' ) && ot_get_option('apple_touch_icon') != '' ) { ?>
     <link rel="apple-touch-icon" href="<?php echo stripslashes(ot_get_option('apple_touch_icon')) ?>">
@@ -57,14 +68,12 @@
 	<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
-	<![endif]-->
+    <![endif]-->
+
 <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/slick.css;">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/slick-theme.css;">
 
 <!-- 追加js -->
-<script src="<?php bloginfo('template_url');?>/js/slick.js"></script>
 <script>
     $(function(){
         $('.voice-slide').slick({

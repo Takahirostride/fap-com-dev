@@ -25,30 +25,30 @@
                     <li class="main_footer_li"><a href="<?php bloginfo('url'); ?>/topics.html">耳寄り情報</a></li>
                     <li class="main_footer_li"><a href="<?php bloginfo('url'); ?>/newsrelease.html">ニュース</a></li>
                     <li class="main_footer_li"><a href="<?php bloginfo('url'); ?>/recruit.html">採用情報</a></li>
-                  <!--  <li class="main_footer_li"><a href="<?php bloginfo('url'); ?>/contact/">お問い合わせ</a></li>-->
+                    <li class="main_footer_li"><a href="<?php bloginfo('url'); ?>/about.html#Access">アクセス</a></li>
+                    <li class="main_footer_li"><a href="<?php bloginfo('url'); ?>/contact.html">お問い合わせ</a></li>
+                    <li class="main_footer_li"><a href="<?php bloginfo('url'); ?>/about/policy.html">プライバシーポリシー</a></li>
                 </ul>
                 <div class="clear"></div>
             </div><!-- .main_footer_column01 -->
 
-            <div class="main_footer_cont_wrap">
-               <!-- <ul class="main_footer_ul">
+            <!-- <div class="main_footer_cont_wrap">
+               <ul class="main_footer_ul">
                     <li class="main_footer_li main_footer_li_long"><a href="<?php bloginfo('url'); ?>/energy/case_study/">オーナー様向選定方法</a></li>
                     <li class="main_footer_li main_footer_li_long"><a href="<?php bloginfo('url'); ?>/energy/product/">推奨製品</span></a></li>
                     <li class="main_footer_li main_footer_li_long"><a href="<?php bloginfo('url'); ?>/#">オーナー様向事例</a></li>
                     <li class="main_footer_li main_footer_li_long"><a href="<?php bloginfo('url'); ?>/energy/knowledge/">豆知識一覧</a></li>
                     <li class="main_footer_li main_footer_li_long"><a href="<?php bloginfo('url'); ?>/energy/document_download/">資料一覧</a></li>
                 </ul>
-                <div class="clear"></div>-->
+                <div class="clear"></div>
                 <ul class="main_footer_ul">
-                <li class="main_footer_li"><a href="<?php bloginfo('url'); ?>/about.html#Access">アクセス</a></li>
-                <li class="main_footer_li"><a href="<?php bloginfo('url'); ?>/contact.html">お問い合わせ</a></li>
-                <li class="main_footer_li"><a href="<?php bloginfo('url'); ?>/about/policy.html">プライバシーポリシー</a></li>
-                   <!-- <li class="main_footer_li main_footer_li_long"><a href="<?php bloginfo('url'); ?>/#">EPC業者様向選定方法</a></li>
+                    <li class="main_footer_li main_footer_li_long"><a href="<?php bloginfo('url'); ?>/#">EPC業者様向選定方法</a></li>
                     <li class="main_footer_li main_footer_li_long"><a href="<?php bloginfo('url'); ?>/select/">取扱製品</span></a></li>
-                    <li class="main_footer_li main_footer_li_long"><a href="<?php bloginfo('url'); ?>/#">EPC業者様向事例</a></li>-->
+                    <li class="main_footer_li main_footer_li_long"><a href="<?php bloginfo('url'); ?>/#">EPC業者様向事例</a></li>
                 </ul>
                 <div class="clear"></div>
-            </div><!-- .main_footer_column02 -->
+            </div> -->
+            <!-- .main_footer_column02 -->
         </div>
 
     </div><!-- .main_footer_cont -->
@@ -58,7 +58,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="main_footer_cont_under_left_name">株式会社FAプロダクツ</div>
-                    <div class="main_footer_cont_under_left_txt">〒105-0004 東京都港区新橋5丁目35番10号 新橋アネックス2階</div>
+                    <div class="main_footer_cont_under_left_txt">〒105-0004 東京都港区新橋5丁目35番10号 <br class="d-block d-md-none">新橋アネックス2階</div>
                     <div class="main_footer_cont_under_left_txt">TEL:03-6453-6761  /  FAX:03-6453-6762</div>
                 </div>
                 <div class="col-md-4">

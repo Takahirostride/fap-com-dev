@@ -72,12 +72,16 @@ font-size: 100%;
 p.example1 { font-size: large; }
 
 p.example2 {
-background-color: #000080
+background-color: #000080;
 }
 
 /*background set*/
 .trsp_black {
     background: rgba(0,0,0,.5);
+    background-blend-mode: color;
+}
+.trsp_blue {
+    background: rgba(0,0,100,.5);
     background-blend-mode: color;
 }
 
@@ -117,19 +121,33 @@ background-color: #000080
 }
 
 /*btn set*/
+/*gradient*/
+@mixin boost {
+    background: rgb(30,87,153); /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
 /*cv*/
 .btn-fa-cv {
-    color: #e5d272;
-    background: #f6f7c5;
+    @include boost;
     border: none;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
+    a{
+        color: #fff;
+    }
 }
 .btn-fa-cv:hover {
     -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;
     background: transparent;
-    color: #f6f7c5;
+    a{
+        color: blue;
+        text-decoration: none;
+    }
 }
 .btn-fa-cv:hover:after {
     transition: all 0.3s ease;
@@ -145,7 +163,7 @@ background-color: #000080
     left: inherit;
     right: 0;
     height: 3px;
-    background: #f6f7c5;
+    @include boost;
 }
 /*brast*/
 .btn-fa-brast {
@@ -171,18 +189,21 @@ background-color: #000080
     .cont_three_column_li-txtbox {
         @include mq(xsmall){
             position: absolute;
+            background-color: rgba(0,0,0,0.4);
+            height: 240px;
         }
         @include mq(medium){
             position: relative;
-            min-height: 300px;
+            background-color: #333;
+            height: 340px;
         }
         @include mq(xlarge){
             position: absolute;
-            min-height: initial;
+            height: 240px;
+            background-color: rgba(0,0,0,0.4);
         }
         left:0px;
         bottom:0px;
-        background-color: rgba(0,0,0,0.4);
         color:#fff;
         width:100%;
         padding-left:20px;
@@ -232,8 +253,11 @@ background-color: #000080
     @include mq(medium){
         float: none;
         width: auto;
-        padding: 2em;
+        padding: 2em .5em;
         border-bottom: none;
+    }
+    @include mq(large){
+        padding: 2em 2em;
     }
 }
 

@@ -28,12 +28,12 @@ Template Name:FAProject HOME
     <div class="row">
         <div class="col-12 col-md-4 cont_three_column_li_wrap">
             <a href="https://fa-products.jp/factory/">
-            <h3 class="cont_three_column_catch py-4 text-info">
+            <h3 class="cont_three_column_catch py-4 text-info text-center text-md-left">
                 スマートファクトリー 事業<i class="fas fa-industry ml-2"></i>
             </h3>
             <div class="cont_three_column_li-imgbox">
-                <img src="<?php bloginfo('template_url');?>/images/com_img1.jpg" class="img-fluid rounded" alt="" />
-                <div class="cont_three_column_li-txtbox px-2 pt-5">
+                <img src="<?php bloginfo('template_url');?>/images/com_img1.jpg" class="img-fluid rounded w-100" alt="" />
+                <div class="cont_three_column_li-txtbox px-2 pt-3">
                     <h4>Smart Factoryを実現するソリューション</h4>
                     <ul class="">
                         <li>自社運用できる稼働監視パッケージ</li>
@@ -47,12 +47,12 @@ Template Name:FAProject HOME
         </div>
         <div class="col-12 col-md-4 cont_three_column_li_wrap">
             <a href="https://fa-products.jp/weintek/">
-            <h3 class="cont_three_column_catch py-4 text-info">
+            <h3 class="cont_three_column_catch py-4 text-info text-center text-md-left">
                 IoTサーバー/ゲートウェイ事業<i class="fas fa-server ml-2"></i>
             </h3>
             <div class="cont_three_column_li-imgbox">
-                <img src="https://fa-products.jp/syst/wp-content/uploads/2016/12/IoT_image.jpg" class="img-fluid rounded" alt="">
-                <div class="cont_three_column_li-txtbox px-2 pt-5">
+                <img src="https://fa-products.jp/syst/wp-content/uploads/2016/12/IoT_image.jpg" class="img-fluid rounded w-100" alt="">
+                <div class="cont_three_column_li-txtbox px-2 pt-3">
                     <h4>Smart Factoryを実現するIoT化機器販売</h4>
                     <ul class="">
                         <li>産業用IoTサーバー</li>
@@ -65,11 +65,11 @@ Template Name:FAProject HOME
         </div>
         <div class="col-12 col-md-4 cont_three_column_li_wrap">
             <a href="https://fa-products.jp/energy/">
-            <h3 class="cont_three_column_catch py-4 text-info">
+            <h3 class="cont_three_column_catch py-4 text-info text-center text-md-left">
                 スマートエネルギー事業<i class="fas fa-solar-panel ml-2"></i>
             </h3>
             <div class="cont_three_column_li-imgbox">
-                <img src="<?php bloginfo('template_url');?>/images/com_img3.jpg" class="img-fluid rounded" alt="" />
+                <img src="<?php bloginfo('template_url');?>/images/com_img3.jpg" class="img-fluid rounded w-100" alt="" />
                 <div class="cont_three_column_li-txtbox px-2 pt-3">
                 <h4>Smartエネルギー機器販売</h4>
                 <ul class="">
@@ -172,7 +172,7 @@ foreach ($posts as $post):
 </div><!--/.col-->
 <div class="col-md-9">
     <a class="text-dark" href="<?php the_permalink();?>">
-        <h2 class="home_news_tit_link mb-3"><i class="fas fa-project-diagram aura"></i>
+        <h2 class="home_news_tit_link mb-4"><i class="fas fa-project-diagram aura"></i>
             <?php
                 if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
                 else {echo $post->post_title;}
@@ -180,6 +180,8 @@ foreach ($posts as $post):
         </h2>
     </a>
     <p class="px-2">
+        <span class="text-dark bg_g p-1"><?php the_time('Y.m.d'); ?></span>
+
         <?php
             if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
             $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
@@ -189,11 +191,9 @@ foreach ($posts as $post):
             }
         ?>
     </p>
-    <button class="btn-fa-cv">
+    <button class="btn-fa-cv mx-auto">
         <a href="<?php the_permalink();?>">MORE ></a>
     </button>
-
-    <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
 
     <span class="stitle_tags">
         <?php
@@ -251,7 +251,7 @@ if ( $the_query->have_posts() ) :
 </div><!--/.col-->
 <div class="col-md-9">
     <a class="text-dark" href="<?php the_permalink();?>">
-        <h2 class="home_news_tit_link mb-3"><i class="fas fa-project-diagram aura aura2"></i>
+        <h2 class="home_news_tit_link mb-4"><i class="fas fa-project-diagram aura aura2"></i>
             <?php
                 if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
                 else {echo $post->post_title;}
@@ -259,6 +259,8 @@ if ( $the_query->have_posts() ) :
         </h2>
     </a>
     <p class="px-2">
+        <span class="text-dark bg_g p-1"><?php the_time('Y.m.d'); ?></span>
+
         <?php
             if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
             $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
@@ -268,11 +270,9 @@ if ( $the_query->have_posts() ) :
             }
         ?>
     </p>
-    <button class="btn-fa-cv">
+    <button class="btn-fa-cv mx-auto">
         <a href="<?php the_permalink();?>">MORE ></a>
     </button>
-
-    <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
 
     <span class="stitle_tags">
         <?php
@@ -329,7 +329,7 @@ if ( $the_query->have_posts() ) :
 </div><!--/.col-->
 <div class="col-md-9">
     <a class="text-dark" href="<?php the_permalink();?>">
-        <h2 class="home_news_tit_link mb-3"><i class="fas fa-project-diagram aura"></i>
+        <h2 class="home_news_tit_link mb-4"><i class="fas fa-project-diagram aura"></i>
             <?php
                 if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
                 else {echo $post->post_title;}
@@ -337,6 +337,8 @@ if ( $the_query->have_posts() ) :
         </h2>
     </a>
     <p class="px-2">
+        <span class="text-dark bg_g p-1"><?php the_time('Y.m.d'); ?></span>
+
         <?php
             if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
             $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
@@ -346,11 +348,9 @@ if ( $the_query->have_posts() ) :
             }
         ?>
     </p>
-    <button class="btn-fa-cv">
+    <button class="btn-fa-cv mx-auto">
         <a href="<?php the_permalink();?>">MORE ></a>
     </button>
-
-    <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
 
     <!--<span class="stitle_tags">
         <?php
@@ -407,7 +407,7 @@ if ( $the_query->have_posts() ) :
 </div><!--/.col-->
 <div class="col-md-9">
     <a class="text-dark" href="<?php the_permalink();?>">
-        <h2 class="home_news_tit_link mb-3"><i class="fas fa-project-diagram aura aura2"></i>
+        <h2 class="home_news_tit_link mb-4"><i class="fas fa-project-diagram aura aura2"></i>
             <?php
                 if(mb_strlen($post->post_title)>60) { $title= mb_substr($post->post_title,0,60) ; echo $title. ･･･ ;}
                 else {echo $post->post_title;}
@@ -415,6 +415,8 @@ if ( $the_query->have_posts() ) :
         </h2>
     </a>
     <p class="px-2">
+        <span class="text-dark bg_g p-1"><?php the_time('Y.m.d'); ?></span>
+
         <?php
             if ( mb_strlen( $post->post_content, 'UTF-8' ) > 150 ) {
             $content = str_replace( '\n', '', mb_substr( strip_tags( $post->post_content ), 0, 150, 'UTF-8' ) );
@@ -424,11 +426,9 @@ if ( $the_query->have_posts() ) :
             }
         ?>
     </p>
-    <button class="btn-fa-cv">
+    <button class="btn-fa-cv mx-auto">
         <a href="<?php the_permalink();?>">MORE ></a>
     </button>
-
-    <span class="stitle_ymd text-dark"><?php the_time('Y.m.d'); ?></span>
 
     <!--<span class="stitle_tags">
         <?php
@@ -459,7 +459,7 @@ if ( $the_query->have_posts() ) :
 
 
 <section class="news_bg news_release my-5 py-md-5">
-    <div class="container trsp_black py-5">
+    <div class="container trsp_blue py-5">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <h2 class="cont-h2-txt text-white">ニュースリリース</h2>
@@ -509,7 +509,7 @@ if ( $the_query->have_posts() ) :
 
                     <div class="col-lg-2 pt-5 pt-lg-0 text-center">
                         <button class="btn-fa-brast text-white">
-                            <a class="text-white" href="<?php bloginfo('url'); ?>/newsrelease.html">MORE ></a>
+                            <a class="text-white" href="<?php bloginfo('url'); ?>/newsrelease.html">MORE&nbsp;></a>
                         </button>
                     </div>
                 </div>
