@@ -22,7 +22,7 @@ Template Name:FAProject HOME
 <section class="fap-enterprise">
 <div class="container">
     <div class="cont-h2 mb-0">
-        <h2 class="cont-h2-txt text-center mt-5">FAプロダクツ基幹事業</h2>
+        <h2 class="cont-h2-txt text-center mt-5">FAプロダクツ 事業</h2>
         <div class="cont-h2-subtxt bg-white text-center">ENTERPRISE</div>
     </div>
     <div class="row">

@@ -84,7 +84,24 @@ Template Name:FAProject RECRUIT
                     </div>
                 </div>
             </div><!-- /.recruit_page_lists_wrap -->
-            <?php endwhile; endif; ?>
+
+            <?php endwhile; else : ?>
+<?php
+function wc_get_page_by_slug( $slug = 'recruit-newgraduate' ) {
+  $pages = get_posts(
+      array(
+        'post_type'      => 'page',
+        'name'           => $slug,
+        'posts_per_page' => 1
+      )
+  );
+  return $pages ? $pages[0] : false;
+}
+?>
+            <p>受付終了しました。</p>
+            <a href="<?php echo get_permalink( get_page_by_path( 'recruit-newgraduate' )->ID ); ?>">詳細はこちら&nbsp;></a>
+
+            <?php endif; ?>
 
             </section>
 

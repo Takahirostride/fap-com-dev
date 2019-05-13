@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /* =================================================================================
 Theme Setup
@@ -79,6 +79,7 @@ function crafto_scripts_styles() {
 	wp_register_script('knob', get_template_directory_uri() . '/js/jquery.knob.min.js', array('jquery'), '1.2.10', true );
 	wp_register_script('fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array('jquery'), '1.1', true );
 	wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0', true );
+	wp_register_script('font_scripts', 'https://typesquare.com/3/tsst/script/ja/typesquare.js?5cbd66ae7a904bfa8b1d5725e90393a3', array(), '', true );
 
 	// Loads Javascript files.(※注意：jQuery、Popper.js、Bootstrap.jsの順番で読み込みます。2019/04/12)
 	wp_enqueue_script('jquery');
@@ -96,6 +97,7 @@ function crafto_scripts_styles() {
 	wp_enqueue_script('fitvids');
 	wp_enqueue_script('googlemaps');
 	wp_enqueue_script('scripts');
+	wp_enqueue_script('font_scripts');
 
 	// Localize scripts
 	$theme_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
@@ -176,7 +178,7 @@ add_filter( 'ot_list_item_title_desc', 'filter_list_item_title_desc', 10, 2 );
 
 // Show only font selection field for typography fields on Theme Options
 function filter_typography_fields( $array, $field_id ) {
-	
+
 	$heading_ids = array(
 		'heading_one_font',
 		'heading_two_font',
@@ -232,7 +234,7 @@ function filter_radio_images( $array, $field_id ) {
 	}
 
 	return $array;
-  
+
 }
 add_filter( 'ot_radio_images', 'filter_radio_images', 10, 2 );
 
@@ -311,9 +313,9 @@ function register_options_pages() {
 	if ( is_admin() && function_exists( 'ot_register_settings' ) ) {
 
 		// Register the pages
-		ot_register_settings( 
+		ot_register_settings(
 			array(
-				array( 
+				array(
 					'id'              => 'import_export',
 					'pages'           => array(
 						array(

@@ -57,7 +57,7 @@
 			if($this.hasClass('animated')) {
 				$(this).attr("value", '0');
 			}
-			
+
 			$this.knob();
 
 			if($this.hasClass('animated')) {
@@ -234,8 +234,8 @@
 			}, 1600, 'easeInOutExpo');
 			pde(evt);
 		});
-	
-		
+
+
 		/* ----- Minimize and darken the Menu Bar ----- */
 		$('body').waypoint(function(direction) {
 			$('.navbar').toggleClass('minified dark-menu');
@@ -472,11 +472,11 @@
 		$('.scrolltotop').click(function(e) {
 			$('html, body').animate({scrollTop: '0'}, 1200, 'easeInOutCubic');
 			pde(e);
-		}); 
+		});
 		/*$('.scrolltotop, .navbar-brand').click(function(e) {
 			$('html, body').animate({scrollTop: '0'}, 1200, 'easeInOutCubic');
 			pde(e);
-		});*/ 
+		});*/
 
 
 		/* ----- Filterable Portfolio effect ----- */
@@ -486,14 +486,14 @@
 
 			$(this).parent().find('.active').removeClass('active');
 			$(this).addClass('active');
-			
+
 			var filterVal = $(this).attr('data-id');
-					
+
 			if(filterVal == 'all') {
 				$('ul.og-grid li.hidden-item').addClass('visible-item');
 				$('ul.og-grid li.hidden-item').removeClass('hidden-item').animate({opacity: 1}, 600);
 			} else {
-				
+
 				$(this).parents().eq(1).siblings('.main').find('li').each(function() {
 
 					var attrArr = $(this).attr('data-id').split(' ');
@@ -509,7 +509,7 @@
 					}
 				});
 			}
-			
+
 			return false;
 		});
 
@@ -521,7 +521,7 @@
 			$('#submit_btn').text('').append('<i class="fa fa-spinner fa-spin"></i>');
 
 			//get input field values
-			var user_name       = $('input[name=name]').val(); 
+			var user_name       = $('input[name=name]').val();
 			var user_email      = $('input[name=email]').val();
 			var user_human      = $('input[name=human]').val();
 			var user_message    = $('textarea[name=message]').val();
@@ -529,24 +529,24 @@
 			//simple validation at client's end
 			//we simply change border color to red if empty field using .css()
 			var proceed = true;
-			if(user_name==""){ 
+			if(user_name==""){
 				$('#contact_form input[name=name]').css('border-color','red');
 				$('#submit_btn').remove('i').text('Submit');
 				proceed = false;
 			}
-			if(user_email==""){ 
+			if(user_email==""){
 				$('input[name=email]').css('border-color','red');
 				$('#submit_btn').remove('i').text('Submit');
 				proceed = false;
 			}
-			if( user_human == "" ) {    
+			if( user_human == "" ) {
 				$('input[name=human]').css('border-color','red');
 				$('#submit_btn').remove('i').text('Submit');
 				proceed = false;
 			}
-			if(user_message=="") {  
+			if(user_message=="") {
 				$('textarea[name=message]').css('border-color','red');
-				$('#submit_btn').remove('i').text('Submit'); 
+				$('#submit_btn').remove('i').text('Submit');
 				proceed = false;
 			}
 
@@ -557,9 +557,9 @@
 				post_data = {'userName':user_name, 'userEmail':user_email, 'userHuman':user_human, 'userMessage':user_message};
 
 				//Ajax post data to server
-				$.post(templateUrl+'/contact.php', post_data, function(response){  
+				$.post(templateUrl+'/contact.php', post_data, function(response){
 
-					//load json data from server and output message     
+					//load json data from server and output message
 					if(response.type == 'error') {
 						output = '<div class="error">'+response.text+'</div>';
 						$('#submit_btn').remove('i').text('Submit');
@@ -570,8 +570,8 @@
 						$('#submit_btn').attr("disabled", true);
 
 						//reset values in all input fields
-						$('#contact_form input').val(''); 
-						$('#contact_form textarea').val(''); 
+						$('#contact_form input').val('');
+						$('#contact_form textarea').val('');
 					}
 
 					$("#result").hide().html(output).slideDown();
@@ -610,7 +610,7 @@
 			}
 			})
 		});
-		
+
 
 		/* ----- Initialize Portfolio Grid ----- */
 		// initializeGrid();
@@ -915,7 +915,7 @@ var Grid = (function() {
 		};
 
 	function init( config ) {
-		
+
 		// the settings..
 		settings = $.extend( true, {}, settings, config );
 
@@ -964,16 +964,16 @@ var Grid = (function() {
 	}
 
 	function initEvents() {
-		
+
 		// when clicking an item, show the preview with the item´s info and large image.
 		// close the item if already expanded.
 		// also close if clicking on the item´s cross
 		initItemsEvents( $items );
-		
+
 		// on window resize get the window´s size again
 		// reset some values..
 		$window.on( 'debouncedresize', function() {
-			
+
 			scrollExtra = 0;
 			previewPos = -1;
 			// save item´s offset
@@ -1039,7 +1039,7 @@ var Grid = (function() {
 				preview.update( $item );
 				return false;
 			}
-			
+
 		}
 
 		// update previewPos
@@ -1097,7 +1097,7 @@ var Grid = (function() {
 			if( $item ) {
 				this.$item = $item;
 			}
-			
+
 			// if already expanded remove class "og-expanded" from current item and add it to new item
 			if( current !== -1 ) {
 				var $currentItem = $items.eq( current );
@@ -1131,7 +1131,7 @@ var Grid = (function() {
 			this.$links.html( eldata.postlinks );
 
 			var self = this;
-			
+
 			// remove the current image in the preview
 			if( typeof self.$largeImg != 'undefined' ) {
 				self.$largeImg.remove();
@@ -1176,7 +1176,7 @@ var Grid = (function() {
 		},
 		open : function() {
 
-			setTimeout( $.proxy( function() {	
+			setTimeout( $.proxy( function() {
 				// set the height for the preview and the item
 				this.setHeights();
 				// scroll to position the preview in the right place
@@ -1210,7 +1210,7 @@ var Grid = (function() {
 				}
 
 			}, this ), 25 );
-			
+
 			return false;
 
 		},
@@ -1256,7 +1256,7 @@ var Grid = (function() {
 			var position = this.$item.data( 'offsetTop' ),
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra,
 				scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
-			
+
 			$body.animate( { scrollTop : scrollVal }, settings.speed );
 
 		},
@@ -1286,3 +1286,114 @@ $.fn.hasAttr = function(name) {
 
 
 })(jQuery);
+
+
+// 追加js
+$(function(){
+	$('.voice-slide').slick({
+		slidesToShow:2,
+		slidesToScroll:1,
+		autoplay:true,
+		autoplaySpeed:3000,
+		infinite: true,
+		responsive:[{
+			breakpoint: 1200,
+			settings:{
+				arrows: false,
+				slidesToShow: 2,
+				slidesToScroll:1
+			}
+		},
+		{
+			breakpoint: 640,
+			settings:{
+				slidesToShow: 1
+			}
+		}]
+	});
+});
+
+
+jQuery(function(){
+	var set = 300;//ウインドウ上部からどれぐらいの位置で変化させるか
+	var boxTop = new Array;
+	var current = -1;
+	//各要素の位置
+	jQuery('.box').each(function(i) {
+		boxTop[i] = jQuery(this).offset().top-800;
+	});
+	//最初の要素にclass="on"をつける
+	changeBox(0);
+	//スクロールした時の処理
+	jQuery(window).scroll(function(){
+		scrollPosition = jQuery(window).scrollTop();
+		for (var i = boxTop.length - 1 ; i >= 0; i--) {
+			if (jQuery(window).scrollTop() > boxTop[i] - set) {
+				changeBox(i);
+				break;
+			}
+		};
+	});
+
+	//ナビの処理
+	function changeBox(secNum) {
+		if (secNum != current) {
+			current = secNum;
+			secNum2 = secNum + 1;//HTML順序用
+			jQuery('#menu-omnist_menu li').removeClass('on');
+			jQuery('#menu-omnist_menu li:nth-child(' + secNum2 +')').addClass('on');
+			/* 位置によって個別に処理をしたい場合　
+			if (current == 0) {
+				// 現在地がsection1の場合の処理
+			} else if (current == 1) {
+				// 現在地がsection2の場合の処理
+			} else if (current == 2) {
+				// 現在地がsection3の場合の処理
+			}*/
+		}
+	};
+});
+
+
+//スムーズスクロール
+jQuery(function() {
+    jQuery(".scroll").click(function(event){
+    event.preventDefault();
+
+    var url = this.href;
+
+    var parts = url.split("#");
+    var target = parts[1];
+
+    var target_offset = jQuery("#"+target).offset();
+    var target_top = target_offset.top-120;
+
+    jQuery('html, body').animate({scrollTop:target_top}, 500);
+    });
+});
+
+//トグル
+jQuery(function(){
+        jQuery("#reason dt").on("click", function() {
+            jQuery(this).next().slideToggle();
+            jQuery(this).toggleClass("active");
+        });
+    });
+
+    $(document).ready(function(){
+        $("a[rel^='prettyPhoto']").prettyPhoto();
+});
+
+//ナビ不随
+$(window).scroll(function(){
+    var element = $('#navbar-fap'),
+        scroll = $(window).scrollTop(),
+        height = element.outerHeight();
+    if ( scroll > height ) {
+        element.addClass('fixed');
+    } else {
+        element.removeClass('fixed');
+    }
+});
+
+

@@ -7,7 +7,7 @@
 		<div>
         <header class="page-header"><h2 class="page-title">採用情報</h2></header>
         </div>
-    <div class="container container_two_column container_single_recruit">   
+    <div class="container container_two_column container_single_recruit">
         <div class="clearfix">
 
 		<?php
@@ -36,7 +36,7 @@
 						$post_class = 'blog-post-single';
 					}
 				} ?>
-					
+
 					<!-- Start the article -->
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class($post_class); ?>>
@@ -52,17 +52,17 @@
                                       //echo '<a href="' . $homeurl . '/archives/tag/' . $tag->slug . '" class="' . $tag->slug . '">' . $tag->name . '</a>';
                                       echo '<span class="single_date_tags"><a href="' . $homeurl . '/archives/tag/' . $tag->slug . '" class="tag-id' . $tag->term_id . '">' . $tag->name . '</a></span>';
                             }} ?>
-                            </span>                            
+                            </span>
                         </div>
 
                     <div class="box-page_w">
                     <div class="box-rec_left">
                     <!--<img src="<?php bloginfo('template_url');?>/images/thum1.jpg" />-->
-                    <?php 
+                    <?php
 					$image = get_field('image');
 					$size = 'full'; // (thumbnail, medium, large, full or custom size)
 					if( $image ) { echo wp_get_attachment_image( $image, $size );}
-					?>	
+					?>
                     </div>
                                         <div class="box-rec_right">
                     <ul class="recruit_box">
@@ -122,18 +122,13 @@
 							</div>;-->
 						<?php //endif ?>
 					<?php endif ?>
-						
+
 						<!-- Entry Content -->
 						<!--<div class="entry-content">
-							
-							
-							
+
 							<?php the_post_thumbnail( 'full' ); ?>
 							<?php //the_content(); ?>
-                            
-                            
-                            
-                            
+
 						</div>--><!-- Entry content end -->
 
 					</article><!-- Article end -->
@@ -162,7 +157,7 @@
 <?php //related_posts(); ?>
 <!-- yarpp 導入により一旦非表示へ
             <h3 class="single_under_tit"><span class="single_under_tit_inner"><?php //$cat = get_the_category(); $cat = $cat[0]; { echo $cat->cat_name; } ?>同じカテゴリーの関連記事</span></h3>
-            
+
 			<?php /**
 			$post_id = get_the_ID();
 			foreach((get_the_category()) as $cat) {
@@ -203,7 +198,7 @@
 			<?php endif; ?>
 			<?php wp_reset_query(); **/?>
             -->
-            
+
 		</div>
 		<?php //get_sidebar( 'single' ); ?>
       </div>

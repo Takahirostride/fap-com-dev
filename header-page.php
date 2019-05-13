@@ -73,122 +73,6 @@
 <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-<!-- 追加js -->
-<script>
-    $(function(){
-        $('.voice-slide').slick({
-            slidesToShow:2,
-            slidesToScroll:1,
-            autoplay:true,
-            autoplaySpeed:3000,
-            infinite: true,
-            responsive:[{
-                breakpoint: 1200,
-                settings:{
-                    arrows: false,
-                    slidesToShow: 2,
-                    slidesToScroll:1
-                }
-            },
-            {
-                breakpoint: 640,
-                settings:{
-                    slidesToShow: 1
-                }
-            }]
-        });
-    });
-</script>
-
-<script type='text/javascript'>
-    jQuery(function(){
-        var set = 300;//ウインドウ上部からどれぐらいの位置で変化させるか
-        var boxTop = new Array;
-        var current = -1;
-        //各要素の位置
-        jQuery('.box').each(function(i) {
-            boxTop[i] = jQuery(this).offset().top-800;
-        });
-        //最初の要素にclass="on"をつける
-        changeBox(0);
-        //スクロールした時の処理
-        jQuery(window).scroll(function(){
-            scrollPosition = jQuery(window).scrollTop();
-            for (var i = boxTop.length - 1 ; i >= 0; i--) {
-                if (jQuery(window).scrollTop() > boxTop[i] - set) {
-                    changeBox(i);
-                    break;
-                }
-            };
-        });
-	//ナビの処理
-	function changeBox(secNum) {
-		if (secNum != current) {
-			current = secNum;
-			secNum2 = secNum + 1;//HTML順序用
-			jQuery('#menu-omnist_menu li').removeClass('on');
-			jQuery('#menu-omnist_menu li:nth-child(' + secNum2 +')').addClass('on');
-			/* 位置によって個別に処理をしたい場合　
-			if (current == 0) {
-				// 現在地がsection1の場合の処理
-			} else if (current == 1) {
-				// 現在地がsection2の場合の処理
-			} else if (current == 2) {
-				// 現在地がsection3の場合の処理
-			}*/
-		}
-	};
-});
-</script>
-
-<script type='text/javascript'>
-    //スムーズスクロール
-    jQuery(function() {
-    jQuery(".scroll").click(function(event){
-    event.preventDefault();
-
-    var url = this.href;
-
-    var parts = url.split("#");
-    var target = parts[1];
-
-    var target_offset = jQuery("#"+target).offset();
-    var target_top = target_offset.top-120;
-
-    jQuery('html, body').animate({scrollTop:target_top}, 500);
-    });
-    });
-</script>
-
-<script>
-    //トグル
-    jQuery(function(){
-        jQuery("#reason dt").on("click", function() {
-            jQuery(this).next().slideToggle();
-            jQuery(this).toggleClass("active");
-        });
-    });
-    </script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $("a[rel^='prettyPhoto']").prettyPhoto();
-    });
-</script>
-
-<script>
-    //ナビ不随
-    $(window).scroll(function(){
-    var element = $('#navbar-fap'),
-        scroll = $(window).scrollTop(),
-        height = element.outerHeight();
-    if ( scroll > height ) {
-        element.addClass('fixed');
-    } else {
-        element.removeClass('fixed');
-    }
-    });
-</script>
-
 </head>
 
 <?php if ( function_exists( 'ot_get_option' ) ) {
@@ -305,16 +189,16 @@ if ( function_exists( 'ot_get_option' ) ):
     <!-- //　<スマホ時表示 -->
     <ul class="navbar-nav mx-auto mt-2 mt-lg-0 d-inline-block d-lg-flex menu__list">
         <li class="nav-bar-navi02-li nav-bar-navi02-li00 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>"><span class="nav-bar-navi02-li-txt-t">Top</span><span class="nav-bar-navi02-li-txt-u br"></span></a></li>
-        <li class="nav-bar-navi02-li nav-bar-navi02-li01 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/about.html"><span class="nav-bar-navi02-li-txt-t">会社概要</span><span class="nav-bar-navi02-li-txt-u br">Corporate</span></a>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li01 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/corporate.html"><span class="nav-bar-navi02-li-txt-t">会社概要</span><span class="nav-bar-navi02-li-txt-u br">Corporate</span></a>
             <?php wp_nav_menu( array('theme_location'=>'fa-products-corp-menu-1') ) ?>
         </li>
-        <li class="nav-bar-navi02-li nav-bar-navi02-li02 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/vision.html"><span class="nav-bar-navi02-li-txt-t">ビジョン</span><span class="nav-bar-navi02-li-txt-u br">Vision</span></a></li>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li02 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/corporate/vision.html"><span class="nav-bar-navi02-li-txt-t">ビジョン</span><span class="nav-bar-navi02-li-txt-u br">Vision</span></a></li>
         <li class="nav-bar-navi02-li nav-bar-navi02-li03 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/topics.html"><span class="nav-bar-navi02-li-txt-t">耳より情報</span><span class="nav-bar-navi02-li-txt-u br">Topics</span></a></li>
         <li class="nav-bar-navi02-li nav-bar-navi02-li04 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/newsrelease.html"><span class="nav-bar-navi02-li-txt-t">ニュース</span><span class="nav-bar-navi02-li-txt-u br">News</span></a></li>
         <li class="nav-bar-navi02-li nav-bar-navi02-li05 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/recruit.html"><span class="nav-bar-navi02-li-txt-t">採用情報</span><span class="nav-bar-navi02-li-txt-u br">Recruit</span></a>
             <?php wp_nav_menu( array('theme_location'=>'fa-products-corp-menu-5') ) ?>
         </li>
-        <li class="nav-bar-navi02-li nav-bar-navi02-li07 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/about.html#Access"><span class="nav-bar-navi02-li-txt-t">アクセス</span><span class="nav-bar-navi02-li-txt-u br">Access</span></a></li>
+        <li class="nav-bar-navi02-li nav-bar-navi02-li07 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/corporate/about.html#Access"><span class="nav-bar-navi02-li-txt-t">アクセス</span><span class="nav-bar-navi02-li-txt-u br">Access</span></a></li>
         <li class="nav-bar-navi02-li nav-bar-navi02-li06 py-2 py-md-0"><a href="<?php bloginfo('url'); ?>/contact.html"><span class="nav-bar-navi02-li-txt-t">お問い合わせ</span><span class="nav-bar-navi02-li-txt-u br">Contact</span></a></li>
 
     </ul>

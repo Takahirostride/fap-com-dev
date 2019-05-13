@@ -7,8 +7,8 @@
 		<div>
         <header class="page-header"><h2 class="page-title">ニュースリリース</h2></header>
         </div>
-    <div class="container container_two_column">   
-        <div class="content_two_column clearfix">
+    <div class="container container_two_column clearfix"><!-- .clearfixは外側に -->
+        <div class="content_two_column">
 
 		<?php
 			if ( have_posts() ) :
